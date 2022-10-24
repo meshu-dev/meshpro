@@ -12,25 +12,19 @@ import { getTypes } from './api/types';
 
 export async function getStaticProps() {
   const token = await apiToken();
-  const types = await getTypes(token);
-  const projects = await getProjects(token);
+  //const projects = await getProjects(token);
 
   return {
     props: {
-      types: types.data,
-      projects: projects.data,
-      test: 'It works!'
+      about: []
     }
   }
 }
 
-export default ({ types, projects, test }) => {
+export default ({ about }) => {
   return (
     <Layout>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-        <ProjectList projects={ projects } />
+        <h1>About</h1>
     </Layout>
   )
 }

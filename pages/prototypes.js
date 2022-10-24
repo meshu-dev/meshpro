@@ -1,6 +1,6 @@
 import pageData from './props/prototypes';
 import Layout from '../components/Layout/Layout';
-import ProjectList from '../components/Portfolio/ProjectList';
+import PortfolioList from '../components/Portfolio/PortfolioList';
 
 export async function getStaticProps() {
   return {
@@ -12,7 +12,8 @@ export default ({ prototypes }) => {
   return (
     <Layout>
         <h1>Prototypes</h1>
-        <ProjectList projects={ prototypes } />
+        <p>Experimental and small projects created to try out new technologies and libraries</p>
+        <PortfolioList entries={ prototypes } />
     </Layout>
   )
 }

@@ -1,6 +1,6 @@
 import pageData from './props/projects';
 import Layout from '../components/Layout/Layout';
-import ProjectList from '../components/Portfolio/ProjectList';
+import PortfolioList from '../components/Portfolio/PortfolioList';
 
 export async function getStaticProps() {
   return {
@@ -11,10 +11,9 @@ export async function getStaticProps() {
 export default ({ types, projects }) => {
   return (
     <Layout>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-        <ProjectList projects={ projects } />
+        <h1>Projects</h1>
+        <p>Apps I've worked on and use to serve a specific purpose</p>
+        <PortfolioList entries={ projects } />
     </Layout>
   )
 }

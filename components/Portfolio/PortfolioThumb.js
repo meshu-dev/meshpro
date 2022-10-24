@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import Chip from '@mui/material/Chip';
 
-const Project = ({ project }) => {
+const PortfolioThumb = ({ project }) => {
   return (
     <Card key={ project.id } sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -27,4 +27,4 @@ const Project = ({ project }) => {
   );
 }
 
-export default Project;
+export default PortfolioThumb;

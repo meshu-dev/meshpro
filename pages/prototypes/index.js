@@ -1,9 +1,9 @@
-import pageData from '../../props/prototypes';
+import { getPrototypeProps } from '../../lib/static-props';
 import PrototypeList from '../../components/Prototype/PrototypeList';
 
 export async function getStaticProps() {
   return {
-    props: await pageData()
+    props: await getPrototypeProps()
   }
 }
 

@@ -4,7 +4,7 @@ import MenuLink from './MenuLink';
 const Menu = () => {
     return (
       <div id={ styles.menu }>
-        <h1>Portfolio</h1>
+        <h1>Mesh's<br />Portfolio</h1>
         <nav>
           <MenuLink name="Projects" url="/" />
           <MenuLink name="Prototypes" url="/prototypes" />

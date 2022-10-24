@@ -1,6 +1,6 @@
-import { apiToken } from '../../components/auth';
-import { getProjects } from '../api/projects';
-import { getTypes } from '../api/types';
+import { apiToken } from '../components/auth';
+import { getProjects } from '../pages/api/projects';
+import { getTypes } from '../pages/api/types';
 
 export default async () => {
   const token = await apiToken();

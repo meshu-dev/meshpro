@@ -1,7 +1,5 @@
 import pageData from './../props/projects';
-import Layout from '../components/Layout/Layout';
-import TypeFilter from '../components/Portfolio/TypeFilter';
-import PortfolioList from '../components/Portfolio/PortfolioList';
+import ProjectList from '../components/Project/ProjectList';
 
 export async function getStaticProps() {
   return {
@@ -11,12 +9,9 @@ export async function getStaticProps() {
 
 const Projects = ({ types, projects }) => {
   return (
-    <Layout>
-        <h1>Projects</h1>
-        <p>Apps I&apos;ve worked on and use to serve a specific purpose</p>
-        <TypeFilter types={ types } />
-        <PortfolioList entries={ projects } />
-    </Layout>
+    <ProjectList
+      types={ types }
+      projects={ projects } />
   )
 }
 

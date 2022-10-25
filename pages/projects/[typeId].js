@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { getProjectProps } from '../../lib/static-props';
 import { getPortfolioPaths } from '../../lib/static-paths';
-import ProjectList from '../components/Project/ProjectList';
+import ProjectList from '../../components/Project/ProjectList';
 
 export async function getStaticProps() {
   return {
@@ -19,6 +19,10 @@ export async function getStaticPaths() {
 const Projects = ({ types, projects }) => {
   const router = useRouter();
   const { typeId } = router.query;
+
+  projects = projects.filter(
+    project => project.type.id == typeId
+  );
 
   return (
     <ProjectList

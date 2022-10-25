@@ -17,15 +17,19 @@ export async function getStaticPaths() {
 }
 
 const Prototypes = ({ types, prototypes }) => {
-    const router = useRouter();
-    const { typeId } = router.query;
+  const router = useRouter();
+  const { typeId } = router.query;
 
-    return (
-      <PrototypeList
-        types={ types }
-        selectedTypeId={ typeId }
-        prototypes={ prototypes } />
-    )
-  }
-  
-  export default Prototypes;
+  prototypes = prototypes.filter(
+    prototype => prototype.type.id == typeId
+  );
+
+  return (
+    <PrototypeList
+      types={ types }
+      selectedTypeId={ typeId }
+      prototypes={ prototypes } />
+  )
+}
+
+export default Prototypes;

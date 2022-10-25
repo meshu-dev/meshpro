@@ -2,26 +2,30 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
+import Link from 'next/link';
 
-const TypeFilter = ({ types, selectedTypeId }) => {
-  const onCloseClick = (typeId) => {
-    console.log('BUTTON', typeId);
-    //onTypeClickFtn(typeId);
-  };
-
-  const hasMatchingId = selectedTypeId == type.id ? true : false;
+const TypeFilter = ({ link, types, selectedTypeId }) => {
   const typeButtons = types.map(
     (type) => {
-      return  <Button key={ type.id } onClick={ () => onCloseClick(type.id) }>
-                { type.name }
-              </Button>
+      const hasMatchingId = selectedTypeId == type.id ? true : false;
+      return  <Link key={ type.id } href={ `${link}/${type.id}` }>
+                <Button>
+                  { type.name }
+                </Button>
+              </Link>
     }
   );
 
+  if (link === '/projects') {
+    link = '/';
+  }
+
   typeButtons.unshift(
-    <Button key={ 0 } onClick={ () => onCloseClick(0) }>
-      All
-    </Button>
+    <Link key='0' href={ `${link}` }>
+      <Button>
+        All
+      </Button>
+    </Link>
   );
 
   return (

@@ -8,6 +8,7 @@ const PrototypeList = ({ types, selectedTypeId, prototypes }) => {
         <h1>Prototypes</h1>
         <p>Experimental and small projects created to try out new technologies and libraries</p>
         <TypeFilter
+          link='/prototypes'
           types={ types }
           selectedTypeId={ selectedTypeId } />
         <PortfolioList

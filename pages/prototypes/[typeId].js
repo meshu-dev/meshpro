@@ -1,17 +1,17 @@
 import { useRouter } from 'next/router';
-import { getPrototypeProps } from '../../lib/static-props';
-import { getPortfolioPaths } from '../../lib/static-paths';
+import { getPrototypeListProps } from '../../lib/static-props';
+import { getPortfolioListPaths } from '../../lib/static-paths';
 import PrototypeList from '../../components/Prototype/PrototypeList';
 
 export async function getStaticProps() {
   return {
-    props: await getPrototypeProps()
+    props: await getPrototypeListProps()
   }
 }
 
 export async function getStaticPaths() {
   return {
-    paths: await getPortfolioPaths(),
+    paths: await getPortfolioListPaths(),
     fallback: false
   }
 }

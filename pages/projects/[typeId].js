@@ -1,17 +1,17 @@
 import { useRouter } from 'next/router';
-import { getProjectProps } from '../../lib/static-props';
-import { getPortfolioPaths } from '../../lib/static-paths';
+import { getProjectListProps } from '../../lib/static-props';
+import { getPortfolioListPaths } from '../../lib/static-paths';
 import ProjectList from '../../components/Project/ProjectList';
 
 export async function getStaticProps() {
   return {
-    props: await getProjectProps()
+    props: await getProjectListProps()
   }
 }
 
 export async function getStaticPaths() {
   return {
-    paths: await getPortfolioPaths(),
+    paths: await getPortfolioListPaths(),
     fallback: false
   }
 }

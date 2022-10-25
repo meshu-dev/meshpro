@@ -1,18 +1,27 @@
 import { useRouter } from 'next/router';
-import { getPortfolioPaths } from '../../lib/static-paths';
+import { getProjectViewPaths } from '../../../lib/static-paths';
+import { getProjectViewProps } from '../../../lib/static-props';
+
+export async function getStaticProps(context) {
+  let props = {};
+
+  if (context.params && context.params.id) {
+    const id = context.params.id;
+    props = await getProjectViewProps(id);
+  }
+
+  return { props };
+}
 
 export async function getStaticPaths() {
   return {
-    paths: await getPortfolioPaths(),
+    paths: await getProjectViewPaths(),
     fallback: false
   }
 }
 
-const ProjectView = () => {
-  const router = useRouter();
-  const { id } = router.query;
-
-  console.log(`ViewId: ${id}`);
+const ProjectView = ({ project }) => {
+  console.log(`project`, project);
 
   return (
     <div>Project View!!!</div>

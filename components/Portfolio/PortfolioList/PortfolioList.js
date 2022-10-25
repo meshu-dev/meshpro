@@ -1,5 +1,5 @@
 import styles from './PortfolioList.module.scss';
-import PortfolioThumb from './PortfolioThumb';
+import PortfolioThumb from '../PortfolioThumb';
 
 const PortfolioList = ({ entries }) => {
   const portfolioThumbs = entries.map(

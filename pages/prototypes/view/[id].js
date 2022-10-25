@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import { getPrototypeViewPaths } from '../../../lib/static-paths';
 import { getPrototypeViewProps } from '../../../lib/static-props';
 

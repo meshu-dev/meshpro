@@ -1,7 +1,7 @@
 import styles from './PrototypeList.module.scss';
 import Layout from '../Layout/Layout';
-import TypeFilter from '../Portfolio/TypeFilter';
-import PortfolioList from '../Portfolio/PortfolioList';
+import TypeFilter from '../Portfolio/TypeFilter/TypeFilter';
+import PortfolioList from '../Portfolio/PortfolioList/PortfolioList';
 
 const PrototypeList = ({ types, selectedTypeId, prototypes }) => {
   return (

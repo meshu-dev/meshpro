@@ -1,7 +1,8 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
+import styles from './TypeFilter.module.scss';
 import Box from '@mui/material/Box';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import Button from '@mui/material/Button';
 import Link from 'next/link';
 
 const TypeFilter = ({ link, types, selectedTypeId }) => {
@@ -29,15 +30,7 @@ const TypeFilter = ({ link, types, selectedTypeId }) => {
   );
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        '& > *': {
-          m: 1,
-        },
-      }}
-    >
+    <Box id={ styles['typefilter'] }>
       <ButtonGroup variant="outlined" aria-label="outlined button group">
         { typeButtons }
       </ButtonGroup>

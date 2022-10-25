@@ -8,7 +8,7 @@ import Chip from '@mui/material/Chip';
 
 const PortfolioThumb = ({ project }) => {
   return (
-    <Card key={ project.id } sx={{ maxWidth: 345 }}>
+    <Card key={ project.id } sx={{ width: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"

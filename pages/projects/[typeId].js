@@ -1,11 +1,32 @@
 import { useRouter } from 'next/router';
-import Layout from '../../components/Layout/Layout';
+import { getProjectProps } from '../../lib/static-props';
+import { getPortfolioPaths } from '../../lib/static-paths';
+import ProjectList from '../components/Project/ProjectList';
 
-const Project = () => {
-    const router = useRouter();
-    const { typeId } = router.query;
-  
-    return <p>Post: { typeId }</p>
+export async function getStaticProps() {
+  return {
+    props: await getProjectProps()
+  }
 }
 
-export default Project;
+export async function getStaticPaths() {
+  return {
+    paths: await getPortfolioPaths(),
+    fallback: false
+  }
+}
+
+const Projects = ({ types, prototypes }) => {
+  const router = useRouter();
+  const { typeId } = router.query;
+
+  console.log('typeId', typeId);
+
+  return (
+    <ProjectList
+      types={ types }
+      projects={ projects } />
+  )
+}
+  
+export default Projects;

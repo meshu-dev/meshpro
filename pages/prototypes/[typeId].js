@@ -1,10 +1,9 @@
 import { useRouter } from 'next/router';
 import { getPrototypeProps } from '../../lib/static-props';
+import { getPortfolioPaths } from '../../lib/static-paths';
 import PrototypeList from '../../components/Prototype/PrototypeList';
 
 export async function getStaticProps() {
-  console.log('GLOBAL!!!', global.globalString);
-
   return {
     props: await getPrototypeProps()
   }
@@ -12,10 +11,7 @@ export async function getStaticProps() {
 
 export async function getStaticPaths() {
   return {
-    paths: [
-      { params: { typeId: '1' } },
-      { params: { typeId: '2' } }
-    ],
+    paths: await getPortfolioPaths(),
     fallback: false
   }
 }

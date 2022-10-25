@@ -16,15 +16,14 @@ export async function getStaticPaths() {
   }
 }
 
-const Projects = ({ types, prototypes }) => {
+const Projects = ({ types, projects }) => {
   const router = useRouter();
   const { typeId } = router.query;
-
-  console.log('typeId', typeId);
 
   return (
     <ProjectList
       types={ types }
+      selectedTypeId={ typeId }
       projects={ projects } />
   )
 }

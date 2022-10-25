@@ -20,11 +20,10 @@ const Prototypes = ({ types, prototypes }) => {
     const router = useRouter();
     const { typeId } = router.query;
 
-    console.log('typeId', typeId);
-
     return (
       <PrototypeList
         types={ types }
+        selectedTypeId={ typeId }
         prototypes={ prototypes } />
     )
   }

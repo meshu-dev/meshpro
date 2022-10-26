@@ -1,10 +1,13 @@
 import styles from './PortfolioList.module.scss';
 import PortfolioThumb from '../PortfolioThumb';
 
-const PortfolioList = ({ entries }) => {
+const PortfolioList = ({ link, entries }) => {
   const portfolioThumbs = entries.map(
     (entry) => {
-      return <PortfolioThumb key={ entry.id } project={ entry } />
+      return <PortfolioThumb
+                key={ entry.id }
+                link={ link }
+                entry={ entry } />
     }
   );
 

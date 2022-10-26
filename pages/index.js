@@ -1,9 +1,9 @@
-import { getProjectProps } from '../lib/static-props';
+import { getProjectListProps } from '../lib/static-props';
 import ProjectList from '../components/Project/ProjectList';
 
 export async function getStaticProps() {
   return {
-    props: await getProjectProps()
+    props: await getProjectListProps()
   }
 }
 

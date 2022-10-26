@@ -1,10 +1,14 @@
 .container {
 	display: flex;
-	margin: 0 auto 2rem;
-	padding: 10px;
-	margin: 20px 40px;
+	background-color: #FFF;
+	width: 1400px;
+	margin: 0 auto;
+	padding-top: 20px;
+	height: inherit;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 
 	#menu-wrapper {
+		padding: 0 20px;
 		width: 250px;
 	}
 

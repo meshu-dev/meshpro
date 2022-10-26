@@ -1,0 +1,37 @@
+#portfolio-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .portfolio-view-column {
+    h2 {
+      font-size: 18px;
+      text-decoration: underline;
+    }
+  
+    img {
+      width: 600px;
+      height: 400px;
+    }
+  
+    #portfolio-technologies {
+      margin-bottom: 20px;
+  
+      #portfolio-technologies-list {
+        display: flex;
+        column-gap: 10px;
+      }
+    }
+  
+    #portfolio-repositories {
+      .portfolio-repositories-link {
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .portfolio-view-column:first-child {
+    padding-right: 40px;
+    width: 100%;
+  }
+}

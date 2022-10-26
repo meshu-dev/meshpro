@@ -14,6 +14,7 @@ const PrototypeList = ({ types, selectedTypeId, prototypes }) => {
           types={ types }
           selectedTypeId={ selectedTypeId } />
         <PortfolioList
+          link='/prototypes'
           entries={ prototypes } />
       </div>
     </Layout>

@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router';
 import { getProjectViewPaths } from '../../../lib/static-paths';
 import { getProjectViewProps } from '../../../lib/static-props';
+import PortfolioView from '../../../components/Portfolio/PortfolioView/PortfolioView';
 
 export async function getStaticProps(context) {
   let props = {};
@@ -21,10 +21,9 @@ export async function getStaticPaths() {
 }
 
 const ProjectView = ({ project }) => {
-  console.log(`project`, project);
-
   return (
-    <div>Project View!!!</div>
+    <PortfolioView
+      entry={ project } />
   )
 }
   

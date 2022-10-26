@@ -1,5 +1,6 @@
 import { getPrototypeViewPaths } from '../../../lib/static-paths';
 import { getPrototypeViewProps } from '../../../lib/static-props';
+import PortfolioView from '../../../components/Portfolio/PortfolioView/PortfolioView';
 
 export async function getStaticProps(context) {
   let props = {};
@@ -20,10 +21,9 @@ export async function getStaticPaths() {
 }
 
 const PrototypeView = ({ prototype }) => {
-  console.log(`prototype 2`, prototype);
-
   return (
-    <div>Prototype View!!!</div>
+    <PortfolioView
+      entry={ prototype } />
   )
 }
   

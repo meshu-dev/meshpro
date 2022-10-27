@@ -1,11 +1,9 @@
 import styles from './PortfolioView.module.scss';
-import Image from 'next/image';
+//import Image from 'next/image';
 import Chip from '@mui/material/Chip';
 import Layout from '../../Layout/Layout';
 
 const PortfolioView = ({ entry }) => {
-  console.log('ENTRY', entry);
-
   let image = null;
   let imageTag = null;
 
@@ -40,7 +38,7 @@ const PortfolioView = ({ entry }) => {
   for (const repository of entry.repositories) {
     repositories.push(
       <div className={ styles['portfolio-repositories-link'] }>
-        <a href={ repository['url'] } target="_blank">
+        <a href={ repository['url'] } target="_blank" rel="noreferrer">
           { repository['name'] }
         </a>
       </div>

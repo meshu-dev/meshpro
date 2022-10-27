@@ -1,0 +1,14 @@
+.menu-link {
+  padding: 5px 10px;
+
+	a {
+		color: #3E5060;
+	}
+}
+
+.menu-link-selected {
+  border-radius: 5px;
+  font-weight: bolder;
+  background-color: $link-colour;
+  color: #FFF;
+}

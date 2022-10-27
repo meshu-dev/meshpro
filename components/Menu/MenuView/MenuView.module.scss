@@ -1,9 +1,4 @@
 #menu {
-  /*
-  background-color: #282A35;
-  color: #FFF; */
-  
-  
 	h1 {
 		margin-bottom: 40px;
     font-size: 28px;
@@ -12,8 +7,7 @@
 	nav {
 		display: flex;
 		flex-direction: column;
-		gap: 25px;
+		gap: 20px;
 		font-size: 20px;
-    color: #3E5060;
 	}
 }

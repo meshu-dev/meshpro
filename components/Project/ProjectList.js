@@ -6,17 +6,17 @@ import PortfolioList from '../Portfolio/PortfolioList/PortfolioList';
 const ProjectList = ({ types, selectedTypeId, projects }) => {
   return (
     <Layout>
-        <div id={ styles['project-list'] }>
-          <h1>Projects</h1>
-          <p>Apps I&apos;ve worked on and use to serve a specific purpose</p>
-          <TypeFilter
-            link='/projects'
-            types={ types }
-            selectedTypeId={ selectedTypeId } />
-          <PortfolioList
-            link='/projects'
-            entries={ projects } />
-        </div>
+      <div id={ styles['project-list'] }>
+        <h1>Projects</h1>
+        <p>Apps I&apos;ve worked on and use to serve a specific purpose</p>
+        <TypeFilter
+          link='/projects'
+          types={ types }
+          selectedTypeId={ selectedTypeId } />
+        <PortfolioList
+          link='/projects'
+          entries={ projects } />
+      </div>
     </Layout>
   )
 }

@@ -12,7 +12,7 @@ const PortfolioThumb = ({ link, entry }) => {
   return (
     <Link key={ entry.id } href={ `${link}/view/${entry.id}` }>
       <a className={ styles['portfolio-thumb-link'] }>
-        <Card sx={{ width: 345 }}>
+        <Card className={ styles['portfolio-thumb-wrapper'] }>
           <CardActionArea>
             <CardMedia
               component="img"

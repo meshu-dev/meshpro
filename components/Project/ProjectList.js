@@ -5,7 +5,7 @@ import PortfolioList from '../Portfolio/PortfolioList/PortfolioList';
 
 const ProjectList = ({ types, selectedTypeId, projects }) => {
   return (
-    <Layout>
+    <Layout pageTitle='Projects'>
       <div id={ styles['project-list'] }>
         <h1>Projects</h1>
         <p>Apps I&apos;ve worked on and use to serve a specific purpose</p>

@@ -6,3 +6,10 @@
   row-gap: 20px;
   column-gap: 20px;
 }
+
+@media (max-width: $list-onecolumn-width) {
+  #portfolio-list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}

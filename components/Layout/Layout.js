@@ -4,11 +4,11 @@ import MenuMobileView from '../Menu/MenuMobileView/MenuMobileView';
 
 import styles from './Layout.module.scss';
 
-const Layout = (props) => {
+const Layout = ({ pageTitle, children }) => {
   return (
     <div id={ styles.layout }>
       <Head>
-        <title>My page title</title>
+        <title>Portfolio { pageTitle ? `- ${pageTitle}` : '' }</title>
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' />
       </Head>
       <div id={ styles['layout-content'] }>
@@ -19,7 +19,7 @@ const Layout = (props) => {
           <MenuMobileView />
         </div>
         <main>
-          { props.children }
+          { children }
         </main>
       </div>
       <footer>

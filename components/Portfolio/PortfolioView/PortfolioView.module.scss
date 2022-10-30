@@ -35,3 +35,29 @@
     width: 100%;
   }
 }
+
+@media (max-width: 1090px) {
+  #portfolio-view {
+    #portfolio-view-imgwrapper {
+      img {
+        width: 500px;
+        height: auto;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  #portfolio-view {
+    flex-direction: column-reverse;
+
+    #portfolio-view-imgwrapper {
+      margin-bottom: 20px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

@@ -46,7 +46,7 @@ const PortfolioView = ({ entry }) => {
   }
 
   return (
-    <Layout>
+    <Layout pageTitle={ entry.name }>
       <div id={ styles['portfolio-view'] }>
         <div className={ styles['portfolio-view-column'] }>
           <h1>{ entry.name }</h1>
@@ -64,7 +64,8 @@ const PortfolioView = ({ entry }) => {
             </div>
           </div>
         </div>
-        <div>
+        <div id={ styles['portfolio-view-imgwrapper'] }
+             className={ styles['portfolio-view-column'] }>
           { imageTag }
         </div>
       </div>

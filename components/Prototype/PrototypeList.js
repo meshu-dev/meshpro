@@ -5,7 +5,7 @@ import PortfolioList from '../Portfolio/PortfolioList/PortfolioList';
 
 const PrototypeList = ({ types, selectedTypeId, prototypes }) => {
   return (
-    <Layout>
+    <Layout pageTitle='Prototypes'>
       <div id={ styles['prototype-list'] }>
         <h1>Prototypes</h1>
         <p>Experimental and small projects created to try out new technologies and libraries</p>

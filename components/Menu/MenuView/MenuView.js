@@ -1,7 +1,7 @@
 import styles from './MenuView.module.scss';
 import MenuLink from '../MenuLink/MenuLink';
 
-const Menu = () => {
+const MenuView = () => {
   return (
     <div id={ styles.menu }>
       <h1>Mesh&apos;s<br />Portfolio</h1>
@@ -14,5 +14,5 @@ const Menu = () => {
   );
 }
   
-export default Menu;
+export default MenuView;
   

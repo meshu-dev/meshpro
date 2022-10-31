@@ -10,7 +10,7 @@ const PortfolioView = ({ entry }) => {
   if (entry.images.length > 0) {
     image = entry.images[0];
     imageTag = (
-      <img src={ image.url } />
+      <img src={ image.url } alt={ image.name } />
     );
   
     /*

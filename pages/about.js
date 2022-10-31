@@ -18,7 +18,7 @@ const About = () => {
           enim. Donec pede justo, fringilla vel, aliquet nec, 
           vulputate eget, arcu. In enim justo, rhoncus ut, 
           imperdiet a, venenatis vitae, justo. Nullam dictum 
-          felis eu pede <a class="external ext" href="#">link</a> 
+          felis eu pede link
           mollis pretium. Integer tincidunt. Cras dapibus. 
           Vivamus elementum semper nisi. Aenean vulputate 
           eleifend tellus. Aenean leo ligula, porttitor eu, 

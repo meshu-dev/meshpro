@@ -1,0 +1,15 @@
+#portfolio-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+@media (max-width: $list-onecolumn-width) {
+  #portfolio-list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}

@@ -3,7 +3,7 @@ import styles from './TypeFilterButton.module.scss';
 import Button from '@mui/material/Button';
 import Link from 'next/link';
 
-const TypeFilterButton = ({ key, text, link, hasMatchingId }) => {
+const TypeFilterButton = ({ keyRef, text, link, hasMatchingId }) => {
   let button = (
     <Button
       className={ hasMatchingId ? styles['typefilter-button-disabled'] : '' }
@@ -14,7 +14,7 @@ const TypeFilterButton = ({ key, text, link, hasMatchingId }) => {
 
   if (hasMatchingId === false) {
     button = (
-      <Link key={ key } href={ link }>
+      <Link key={ keyRef } href={ link }>
         { button }
       </Link>
     );

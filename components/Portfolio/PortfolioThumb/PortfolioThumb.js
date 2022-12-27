@@ -9,17 +9,29 @@ import { CardActionArea } from '@mui/material';
 import Chip from '@mui/material/Chip';
 
 const PortfolioThumb = ({ link, entry }) => {
+  let imgElement = '';
+
+  if (entry.images) {
+    const image = entry.images[0];
+
+    if (image.thumb && image.thumb.url) {
+      imgElement = (
+        <CardMedia
+          component="img"
+          height="250"
+          image={ image.thumb.url }
+          alt="green iguana"
+        />
+      );
+    }
+  }
+
   return (
     <Link key={ entry.id } href={ `${link}/view/${entry.id}` }>
       <a className={ styles['portfolio-thumb-link'] }>
         <Card className={ styles['portfolio-thumb-wrapper'] }>
           <CardActionArea>
-            <CardMedia
-              component="img"
-              height="250"
-              image={ entry.image.url }
-              alt="green iguana"
-            />
+            { imgElement }
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 { entry.name }

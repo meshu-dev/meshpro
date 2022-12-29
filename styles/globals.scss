@@ -9,20 +9,45 @@ body {
   background-color: $bg-color;
   color: #393939;
   height: auto;
-}
 
-a {
-  color: $link-colour;
-  font-weight: bolder;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-h1 {
-  margin: 0 0 5px;
+  a {
+    color: $link-colour;
+    font-weight: bolder;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  h1 {
+    margin: 0 0 5px;
+  }
+  
+  main {
+    h1 {
+      font-size: 50px;
+    }
+  
+    .MuiButtonGroup-contained {
+      .MuiButton-outlined {
+        border-color: $btn-color !important;
+        color: $btn-color;
+      }
+  
+      .MuiButton-contained {
+        border-color: #000 !important;
+      }
+    }
+    
+    .MuiButton-contained {
+      background-color: $btn-color;
+    }
+  
+    .MuiButton-contained:hover {
+      background-color: $btn-hover-color;
+    }
+  }
 }
 
 * {

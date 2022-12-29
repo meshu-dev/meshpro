@@ -7,12 +7,14 @@ const PrototypeList = ({ types, selectedTypeId, prototypes }) => {
   return (
     <Layout pageTitle='Prototypes'>
       <div id={ styles['prototype-list'] }>
-        <h1>Prototypes</h1>
-        <p>Experimental and small projects created to try out new technologies and libraries</p>
-        <TypeFilter
-          link='/prototypes'
-          types={ types }
-          selectedTypeId={ selectedTypeId } />
+        <div id={ styles['prototype-list-header'] }>
+          <h1>Prototypes</h1>
+          <p>Experimental and small projects created to try out new technologies and libraries</p>
+          <TypeFilter
+            link='/prototypes'
+            types={ types }
+            selectedTypeId={ selectedTypeId } />
+        </div>
         <PortfolioList
           link='/prototypes'
           entries={ prototypes } />

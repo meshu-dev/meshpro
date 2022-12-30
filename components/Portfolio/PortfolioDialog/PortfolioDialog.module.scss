@@ -1,0 +1,25 @@
+#portfolio-dialog {
+  button {
+    color: $link-colour;
+  }
+}
+
+#portfolio-dialog-content {
+  display: flex;
+  flex-direction: column;
+
+  #portfolio-dialog-technologies {
+    margin-bottom: 20px;
+
+    #portfolio-dialog-technologieslist {
+      display: flex;
+      column-gap: 10px;
+    }
+  }
+
+  #portfolio-dialog-repositories {
+    .portfolio-dialog-repositorieslink {
+      margin-bottom: 5px;
+    }
+  }
+}

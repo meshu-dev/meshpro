@@ -1,10 +1,28 @@
 #header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 20px 0;
 
   nav {
     display: flex;
     gap: 20px;
+  }
+
+  button {
+    display: none;
+    margin: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  #header {
+    nav {
+      display: none;
+    }
+  
+    button {
+      display: block;
+    }
   }
 }

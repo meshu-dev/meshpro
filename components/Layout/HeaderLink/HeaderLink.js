@@ -4,15 +4,12 @@ import styles from './HeaderLink.module.scss';
 
 const HeaderLink = ({ name, url }) => {
   const router = useRouter();
-  const indexUrl = '/projects';  
+  const indexUrl = '/';  
 
   let linkClass = styles['header-link'];
   let link = null;
 
-  if (
-    router.asPath.startsWith(url) === true || 
-    (router.asPath === '/' && url === indexUrl)
-  ) {
+  if (router.asPath === url) {
     linkClass = `${linkClass} ${styles['header-link-selected']}`;
     link = (<span>{ name }</span>);
   } else {

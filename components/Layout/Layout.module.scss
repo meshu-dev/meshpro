@@ -8,20 +8,6 @@
   padding: 0 20px;
 
   #layout-content {
-    /*
-    display: flex;
-    flex-direction: row;
-
-    #menu-wrapper {
-      display: block;
-      padding: 0 20px;
-      width: 250px;
-    }
-
-    #menu-mobile-wrapper {
-      display: none;
-    } */
-  
     main {
       width: 100%;
       min-height: 1000px;
@@ -47,17 +33,7 @@
 @media (max-width: $mobile-width) {
   #layout {
     #layout-content {
-      /*
-      display: flex;
-      flex-direction: column;
-  
-      #menu-wrapper {
-        display: none;
-      }
-    
-      #menu-mobile-wrapper {
-        display: block;
-      } */
+      
     }
   }
 }

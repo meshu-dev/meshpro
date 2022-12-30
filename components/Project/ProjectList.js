@@ -15,9 +15,7 @@ const ProjectList = ({ types, selectedTypeId, projects }) => {
             types={ types }
             selectedTypeId={ selectedTypeId } />
         </div>
-        <PortfolioList
-          link='/projects'
-          entries={ projects } />
+        <PortfolioList entries={ projects } />
       </div>
     </Layout>
   )

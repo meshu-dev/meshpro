@@ -28,7 +28,7 @@ const PortfolioDialog = ({ entry, isOpen, isFullscreen, onCloseFtn }) => {
 
   for (const repository of entry.repositories) {
     repositories.push(
-      <div className={ styles['portfolio-dialog-repositorieslink'] }>
+      <div key={ repository['name'] } className={ styles['portfolio-dialog-repositorieslink'] }>
         <a href={ repository['url'] } target="_blank" rel="noreferrer">
           { repository['name'] }
         </a>

@@ -25,8 +25,6 @@ const HeaderLink = ({ name, url }) => {
     );
   }
 
-  console.log('PATH', router.asPath, url, indexUrl);
-
   return (
     <div className={ linkClass }>
       { link }

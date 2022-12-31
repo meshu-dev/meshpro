@@ -9,7 +9,6 @@ const PortfolioList = ({ entries }) => {
   const [entry, setEntry] = React.useState(null);
 
   const onDialogOpen = (entry, isFullscreen = false) => {
-    console.log('isFullscreen: ', isFullscreen);
     setEntry(entry);
     setDialogFullscreen(isFullscreen);
     setDialogOpen(true);

@@ -31,7 +31,7 @@ const Header = () => {
           <HeaderLink
             key={ `header-link-${index + 1}` }
             name={ data['label'] }
-            url={ data['link'] } />
+            url={ data['link'] === '/' ? '/projects' : data['link'] } />
         )) }
       </nav>
       <IconButton

@@ -5,10 +5,13 @@ import PortfolioDialog from '../PortfolioDialog/PortfolioDialog';
 
 const PortfolioList = ({ entries }) => {
   const [dialogOpen, setDialogOpen] = React.useState(false);
+  const [dialogFullscreen, setDialogFullscreen] = React.useState(false);
   const [entry, setEntry] = React.useState(null);
 
-  const onDialogOpen = (entry) => {
+  const onDialogOpen = (entry, isFullscreen = false) => {
+    console.log('isFullscreen: ', isFullscreen);
     setEntry(entry);
+    setDialogFullscreen(isFullscreen);
     setDialogOpen(true);
   };
 
@@ -34,6 +37,7 @@ const PortfolioList = ({ entries }) => {
       <PortfolioDialog
         entry={ entry }
         isOpen={ dialogOpen }
+        isFullscreen={ dialogFullscreen }
         onCloseFtn={ onDialogClose } />
     </div>
   );

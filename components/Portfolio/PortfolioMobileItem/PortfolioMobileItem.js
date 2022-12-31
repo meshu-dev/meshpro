@@ -24,7 +24,7 @@ const PortfolioMobileItem = ({ entry, onSelectFtn }) => {
     <Card
       key={ entry.id }
       className={ styles['portfolio-mobile-item'] }
-      onClick={ () => onSelectFtn(entry) }>
+      onClick={ () => onSelectFtn(entry, true) }>
       { imgElement }
       <CardContent>
         <h2>{ entry.name }</h2>

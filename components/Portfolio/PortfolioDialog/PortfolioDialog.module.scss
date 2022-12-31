@@ -4,6 +4,18 @@
   }
 }
 
+#portfolio-dialog-header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 0 20px;
+  background-color: $header-color;
+
+  button {
+    color: #FFF;
+  }
+}
+
 #portfolio-dialog-content {
   display: flex;
   flex-direction: column;
@@ -19,7 +31,14 @@
 
   #portfolio-dialog-repositories {
     .portfolio-dialog-repositorieslink {
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
+    margin-bottom: 40px;
+  }
+
+  button {
+    background-color: $btn-color;
+    color: #FFF;
+    width: 140px;
   }
 }

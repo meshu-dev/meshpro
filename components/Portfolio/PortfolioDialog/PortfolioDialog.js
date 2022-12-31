@@ -1,13 +1,16 @@
 import * as React from 'react';
 import styles from './PortfolioDialog.module.scss';
 import Dialog from '@mui/material/Dialog';
+import AppBar from '@mui/material/AppBar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import Chip from '@mui/material/Chip';
-import DialogActions from '@mui/material/DialogActions';
+import Link from '@mui/material/Link';
 import Button from '@mui/material/Button';
 
-const PortfolioDialog = ({ entry, isOpen, onCloseFtn }) => {
+const PortfolioDialog = ({ entry, isOpen, isFullscreen, onCloseFtn }) => {
   if (entry == null) {
     return;
   }
@@ -25,7 +28,7 @@ const PortfolioDialog = ({ entry, isOpen, onCloseFtn }) => {
 
   for (const repository of entry.repositories) {
     repositories.push(
-      <div className={ styles['portfolio-repositories-link'] }>
+      <div className={ styles['portfolio-dialog-repositorieslink'] }>
         <a href={ repository['url'] } target="_blank" rel="noreferrer">
           { repository['name'] }
         </a>
@@ -34,8 +37,21 @@ const PortfolioDialog = ({ entry, isOpen, onCloseFtn }) => {
   }
 
   return (
-    <Dialog id={ styles['portfolio-dialog'] } open={ isOpen } onClose={ onCloseFtn }>
-      <DialogTitle>{ entry.name }</DialogTitle>
+    <Dialog
+      id={ styles['portfolio-dialog'] }
+      open={ isOpen }
+      onClose={ onCloseFtn }
+      fullScreen={ isFullscreen }>
+      <AppBar id={ styles['portfolio-dialog-header'] }>
+        <IconButton
+          edge="start"
+          color="inherit"
+          onClick={ onCloseFtn }
+          aria-label="close">
+          <CloseIcon />
+        </IconButton>
+        <DialogTitle>{ entry.name }</DialogTitle>
+      </AppBar>
       <DialogContent id={ styles['portfolio-dialog-content'] }>
         <p>{ entry.description }</p>
         <div id={ styles['portfolio-dialog-technologies'] }>
@@ -48,12 +64,12 @@ const PortfolioDialog = ({ entry, isOpen, onCloseFtn }) => {
           <h2>Repositories</h2>
           <div>{ repositories }</div>
         </div>
+        <Link href="http://www.google.co.uk" target="_blank">
+          <Button variant="contained">
+            Visit site
+          </Button>
+        </Link>
       </DialogContent>
-      <DialogActions>
-        <Button onClick={ onCloseFtn }>
-          Close
-        </Button>
-      </DialogActions>
     </Dialog>
   );
 }

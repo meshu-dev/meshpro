@@ -9,6 +9,7 @@ This is a Next.js project which uses the build function to pull data from the AP
 This project requires the portfolio-api app to work.
 
 ### Dev Setup
+
 - Install packages
 ```
 npm install
@@ -28,6 +29,7 @@ API_PASSWORD
 npm run dev
 ```
 ### Static Site Hosting
+
 - Run the following command to generate static site
 ```
 npm run build

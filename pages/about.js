@@ -12,7 +12,7 @@ const About = () => {
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
         </Head>
         <div id='about'>
-          <h1>About (Test)</h1>
+          <h1>About (Test2)</h1>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing 
           elit. Aenean commodo ligula eget dolor. Aenean massa 
           <strong>strong</strong>. Cum sociis natoque penatibus 

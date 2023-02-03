@@ -9,9 +9,9 @@ const PortfolioItem = ({ entry, onSelectFtn }) => {
   if (entry.images) {
     const image = entry.images[0];
 
-    if (image.thumb && image.thumb.url) {
+    if (image && image.url) {
       imgElement = (
-        <img src={ image.thumb.url } />
+        <img src={ image.url } />
       );
     }
   }

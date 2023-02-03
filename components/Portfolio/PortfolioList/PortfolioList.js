@@ -14,7 +14,7 @@ const PortfolioList = ({ entries }) => {
     setDialogOpen(true);
   };
 
-  const portfolioThumbs = entries.map(
+  const portfolioItems = entries.map(
     (entry) => {
       return <PortfolioItem
                 key={ entry.id }
@@ -31,7 +31,7 @@ const PortfolioList = ({ entries }) => {
   return (
     <div id={ styles['portfolio-list'] }>
       <div id={ styles['portfolio-list-entries'] }>
-        { portfolioThumbs }
+        { portfolioItems }
       </div>
       <PortfolioDialog
         entry={ entry }

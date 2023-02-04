@@ -64,7 +64,7 @@ const PortfolioDialog = ({ entry, isOpen, isFullscreen, onCloseFtn }) => {
           <h2>Repositories</h2>
           <div>{ repositories }</div>
         </div>
-        <Link href="http://www.google.co.uk" target="_blank">
+        <Link href={ entry.url } target="_blank">
           <Button variant="contained">
             Visit site
           </Button>

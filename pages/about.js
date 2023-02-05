@@ -1,6 +1,5 @@
 import Layout from '../components/Layout/Layout';
 import Head from 'next/head';
-import Chip from '@mui/material/Chip';
 import { getAboutProps } from '../lib/static-props';
 
 export async function getStaticProps() {
@@ -20,7 +19,9 @@ const About = ({ about, langList }) => {
           <p>{ about.text }</p>
           <div>
             <h2>Technologies</h2>
-            <div id='about-techstack-list'>
+            <div id="about-techstack-list">
+              <div id="about-techstack-msg">Below shows a list of technologies that I have experience 
+              in with both work experience and personal projects.</div>
               <div dangerouslySetInnerHTML={{ __html: langList }} />
             </div>
           </div>

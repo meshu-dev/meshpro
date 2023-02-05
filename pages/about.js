@@ -25,6 +25,7 @@ const About = ({ about, langList }) => {
             <h2>Technologies</h2>
             <div id='about-techstack-list'>
               { langList }
+              <div dangerouslySetInnerHTML={{ __html: langList }} />
               <div className='about-techstack'>
                 <PHPImage />
                 <div className="about-techstack-items">

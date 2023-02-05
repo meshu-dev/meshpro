@@ -24,6 +24,7 @@ const About = ({ about, langList }) => {
           <div>
             <h2>Technologies</h2>
             <div id='about-techstack-list'>
+              { langList }
               <div className='about-techstack'>
                 <PHPImage />
                 <div className="about-techstack-items">

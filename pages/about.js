@@ -12,7 +12,7 @@ export async function getStaticProps() {
   }
 }
 
-const About = ({ about }) => {
+const About = ({ about, langList }) => {
   return (
     <Layout pageTitle='About'>
         <Head>

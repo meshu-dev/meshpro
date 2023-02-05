@@ -12,15 +12,9 @@
     align-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-  }
-}
 
-@media (max-width: $mobile-width) {
-  #about {
-    #about-techstack-list {
-      #about-techstack-msg {
-        margin-bottom: 40px;
-      }
+    #about-techstack-msg {
+      margin-bottom: 40px;
     }
   }
 }

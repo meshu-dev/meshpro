@@ -10,11 +10,11 @@ const PortfolioMobileItem = ({ entry, onSelectFtn }) => {
   if (entry.images) {
     const image = entry.images[0];
 
-    if (image.thumb && image.thumb.url) {
+    if (image && image.url) {
       imgElement = (
         <CardMedia
           component="img"
-          image={ image.thumb.url }
+          image={ image.url }
           alt={ entry.name } />
       );
     }

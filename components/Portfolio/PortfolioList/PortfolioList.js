@@ -3,7 +3,7 @@ import * as React from 'react';
 import PortfolioItem from '../PortfolioItem/PortfolioItem';
 import PortfolioDialog from '../PortfolioDialog/PortfolioDialog';
 
-const PortfolioList = ({ entries }) => {
+const PortfolioList = ({ entries, showType }) => {
   const [dialogOpen, setDialogOpen] = React.useState(false);
   const [dialogFullscreen, setDialogFullscreen] = React.useState(false);
   const [entry, setEntry] = React.useState(null);
@@ -19,6 +19,7 @@ const PortfolioList = ({ entries }) => {
       return <PortfolioItem
                 key={ entry.id }
                 entry={ entry }
+                showType={ showType }
                 onSelectFtn={ onDialogOpen } />
     }
   );

@@ -15,12 +15,17 @@
     justify-content: center;
     max-width: 50%;
 
-    h2 {
-      margin-top: 0;
-    }
-
-    .portfolio-item-type {
-      max-width: 80px;
+    .portfolio-item-title {
+      display: flex;
+      flex-direction: row;
+    
+      h2 {
+        margin-top: 0;
+      }
+  
+      .portfolio-item-type {
+        max-width: 80px;
+      }
     }
 
     button {

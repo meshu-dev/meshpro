@@ -28,8 +28,10 @@ const PortfolioItem = ({ entry, showType, onSelectFtn }) => {
       <div key={ entry.id } className={ styles['portfolio-item'] }>
         { imgElement }
         <div className={ styles['portfolio-item-text'] }>
-          <h2>{ entry.name }</h2>
-          <div className={ styles['portfolio-item-type'] }>{ showTypeHtml }</div>
+          <div className={ styles['portfolio-item-title'] }>
+            <h2>{ entry.name }</h2>
+            <div className={ styles['portfolio-item-type'] }>{ showTypeHtml }</div>
+          </div>
           <p>{ entry.description }</p>
           <Button
             variant="contained"

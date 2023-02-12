@@ -1,0 +1,14 @@
+.portfolio-item-title {
+  display: flex;
+  flex-direction: row;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .portfolio-item-type {
+    margin-left: 12px;
+    max-width: 80px;
+  }
+}
+

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styles from './PortfolioItem.module.scss';
-import Chip from '@mui/material/Chip';
 import Button from '@mui/material/Button';
+import PortfolioItemTitle from '../PortfolioItemTitle/PortfolioItemTitle';
 import PortfolioMobileItem from '../PortfolioMobileItem/PortfolioMobileItem';
 
 const PortfolioItem = ({ entry, showType, onSelectFtn }) => {
@@ -17,12 +17,6 @@ const PortfolioItem = ({ entry, showType, onSelectFtn }) => {
     }
   }
 
-  let showTypeHtml = '';
-
-  if (showType) {
-    showTypeHtml =  <Chip label={ entry.type.name } variant="outlined" />;
-  }
-
   return (
     <div  className={ styles['portfolio-item-wrapper'] }>
       <div key={ entry.id } className={ styles['portfolio-item'] }>
@@ -32,6 +26,9 @@ const PortfolioItem = ({ entry, showType, onSelectFtn }) => {
             <h2>{ entry.name }</h2>
             <div className={ styles['portfolio-item-type'] }>{ showTypeHtml }</div>
           </div>
+          <PortfolioItemTitle
+            entry={ entry }
+            showType={ showType } />
           <p>{ entry.description }</p>
           <Button
             variant="contained"
@@ -42,6 +39,7 @@ const PortfolioItem = ({ entry, showType, onSelectFtn }) => {
       </div>
       <PortfolioMobileItem
         entry={ entry }
+        showType={ showType }
         onSelectFtn={ onSelectFtn } />
     </div>
   );

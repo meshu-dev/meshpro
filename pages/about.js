@@ -8,7 +8,7 @@ export async function getStaticProps() {
   }
 }
 
-const About = ({ about, langList }) => {
+const About = ({ about, techList }) => {
   return (
     <Layout pageTitle='About'>
         <Head>
@@ -16,13 +16,13 @@ const About = ({ about, langList }) => {
         </Head>
         <div id='about'>
           <h1>About</h1>
-          <p>{ about.text }</p>
+          <div dangerouslySetInnerHTML={{ __html: about }} />
           <div>
             <h2>Technologies</h2>
             <div id="about-techstack-list">
               <div id="about-techstack-msg">Below shows a list of technologies that I have experience 
               in with both work experience and personal projects.</div>
-              <div dangerouslySetInnerHTML={{ __html: langList }} />
+              <div dangerouslySetInnerHTML={{ __html: techList }} />
             </div>
           </div>
         </div>

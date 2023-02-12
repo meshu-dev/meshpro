@@ -24,7 +24,7 @@ const PortfolioItem = ({ entry, showType, onSelectFtn }) => {
   }
 
   return (
-    <div>
+    <div  className={ styles['portfolio-item-wrapper'] }>
       <div key={ entry.id } className={ styles['portfolio-item'] }>
         { imgElement }
         <div className={ styles['portfolio-item-text'] }>

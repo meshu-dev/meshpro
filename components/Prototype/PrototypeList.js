@@ -8,7 +8,7 @@ const PrototypeList = ({ types, selectedTypeId, prototypes }) => {
       <div id={ styles['prototype-list'] }>
         <div id={ styles['prototype-list-header'] }>
           <h1>Prototypes</h1>
-          <p>Experimental and small projects created to try out new technologies and libraries</p>
+          <p>Experimental apps to try out new technologies and libraries</p>
         </div>
         <PortfolioList entries={ prototypes } />
       </div>

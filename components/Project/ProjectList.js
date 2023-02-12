@@ -9,7 +9,7 @@ const ProjectList = ({ types, selectedTypeId, projects }) => {
       <div id={ styles['project-list'] }>
         <div id={ styles['project-list-header'] }>
           <h1>Projects</h1>
-          <p>Apps I&apos;ve worked on and use to serve a specific purpose</p>
+          <p>Apps to provide a service and showcase technologies</p>
           <TypeFilter
             link='/projects'
             types={ types }

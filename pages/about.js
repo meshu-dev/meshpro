@@ -16,7 +16,7 @@ const About = ({ about, techList }) => {
         </Head>
         <div id='about'>
           <h1>About</h1>
-          <div dangerouslySetInnerHTML={{ __html: about }} />
+          <div id="about-text" dangerouslySetInnerHTML={{ __html: about }} />
           <div>
             <h2>Technologies</h2>
             <div id="about-techstack-list">

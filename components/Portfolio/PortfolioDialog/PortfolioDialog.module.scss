@@ -36,6 +36,10 @@
     margin-bottom: 40px;
   }
 
+  a:hover {
+    text-decoration: none;
+  }
+
   button {
     background-color: $btn-color;
     color: #FFF;

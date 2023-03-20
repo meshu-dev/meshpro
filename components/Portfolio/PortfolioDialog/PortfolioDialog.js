@@ -64,7 +64,11 @@ const PortfolioDialog = ({ entry, isOpen, isFullscreen, onCloseFtn }) => {
           <h2>Repositories</h2>
           <div>{ repositories }</div>
         </div>
-        <Link href={ entry.url } target="_blank" underline="none">
+        <Link
+          href={ entry.url }
+          target="_blank"
+          underline="none"
+          className={ styles['portfolio-dialog-btnlink'] }>
           <Button variant="contained">
             Visit site
           </Button>

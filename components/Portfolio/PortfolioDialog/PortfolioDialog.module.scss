@@ -36,9 +36,12 @@
     margin-bottom: 40px;
   }
 
-  .portfolio-dialog-btnlink:hover {
+  .portfolio-dialog-btnlink {
     width: 140px;
-    text-decoration: none;
+    
+    :hover {
+      text-decoration: none;
+    }
 
     button {
       background-color: $btn-color;

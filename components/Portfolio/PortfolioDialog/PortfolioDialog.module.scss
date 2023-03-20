@@ -37,12 +37,13 @@
   }
 
   .portfolio-dialog-btnlink:hover {
-    text-decoration: none;
-  }
-
-  button {
-    background-color: $btn-color;
-    color: #FFF;
     width: 140px;
+    text-decoration: none;
+
+    button {
+      background-color: $btn-color;
+      color: #FFF;
+      width: inherit;
+    }
   }
 }

@@ -38,15 +38,15 @@
 
   .portfolio-dialog-btnlink {
     width: 140px;
-    
-    :hover {
-      text-decoration: none;
-    }
 
     button {
       background-color: $btn-color;
       color: #FFF;
       width: inherit;
     }
+  }
+
+  .portfolio-dialog-btnlink:hover {
+    text-decoration: none;
   }
 }

@@ -1,0 +1,21 @@
+#about {
+  h1, h2 {
+    text-align: center;
+  }
+
+  h2 {
+    margin-top: 40px;
+  }
+
+  #about-text {
+    display: flex;
+    justify-content: center;
+  }
+
+  #about-techstack-list {
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}

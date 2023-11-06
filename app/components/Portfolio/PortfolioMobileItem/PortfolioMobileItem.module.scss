@@ -1,0 +1,14 @@
+.portfolio-mobile-item {
+  :hover {
+    cursor: pointer;
+  }
+
+  display: none;
+  width: auto;
+}
+
+@media (max-width: $mobile-width) {
+  .portfolio-mobile-item {
+    display: block;
+  }
+}

@@ -1,0 +1,18 @@
+#portfolio-list {
+  #portfolio-list-entries {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    row-gap: 60px;
+  }
+}
+
+@media (max-width: $list-onecolumn-width) {
+  #portfolio-list {
+    #portfolio-list-entries {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+  }
+}

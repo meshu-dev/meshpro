@@ -1,10 +1,12 @@
 import { apiGet } from './api-call';
 
-export const getTypes = async (token) => {
+export const getTypes = async (token: string) => {
   const types = await apiGet(
     'types',
     { token }
-  );
+  )
 
-  return types;
+  console.log('TYPES', types)
+
+  return types
 }

@@ -1,6 +1,7 @@
-import Head from 'next/head';
-import Header from './Header/Header';
-import styles from './Layout.module.scss';
+import Head from 'next/head'
+import Link from 'next/link'
+import Header from './Header/Header'
+import styles from './Layout.module.scss'
 
 const Layout = ({ pageTitle, children }) => {
   return (
@@ -17,7 +18,7 @@ const Layout = ({ pageTitle, children }) => {
         <div id={ styles['footer-divider'] }></div>
         <p>
           Built and generated with&nbsp;
-          <a href="https://nextjs.org">Next.js</a>
+          <Link href="https://nextjs.org">Next.js</Link>
         </p>
       </footer>
     </div>

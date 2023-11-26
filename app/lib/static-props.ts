@@ -1,7 +1,7 @@
 import { apiToken } from './api/auth'
 import { getTypes } from './api/types'
 import { getProjects } from './api/projects'
-import { getAbout, getTechList } from './api/about'
+import { getAbout } from './api/about'
 
 export const getProjectListProps = async () => {
   const token = await apiToken()
@@ -16,10 +16,9 @@ export const getProjectListProps = async () => {
 
 export const getAboutProps = async () => {
   const aboutHtml = await getAbout()
-  const techListHtml = await getTechList()
 
   return {
     about: aboutHtml,
-    techList: techListHtml
+    techList: ''
   }
 }

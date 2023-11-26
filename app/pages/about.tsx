@@ -1,5 +1,5 @@
-import Layout from '../components/Layout/Layout';
-import { getAboutProps } from '../lib/static-props';
+import Layout from '../components/Layout/Layout'
+import { getAboutProps } from '../lib/static-props'
 
 export async function getStaticProps() {
   return {
@@ -22,4 +22,4 @@ const About = ({ about, techList }) => {
   )
 }
 
-export default About;
+export default About

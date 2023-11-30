@@ -16,10 +16,7 @@ const Layout = ({ pageTitle, children }) => {
       </main>
       <footer>
         <div id={ styles['footer-divider'] }></div>
-        <p>
-          Built and generated with&nbsp;
-          <Link href="https://nextjs.org">Next.js</Link>
-        </p>
+        <p>Copyright &copy; { new Date().getFullYear() } Mesh. All Rights Reserved.</p>
       </footer>
     </div>
   )

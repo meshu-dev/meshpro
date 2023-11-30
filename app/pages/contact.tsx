@@ -1,5 +1,4 @@
 import { getProjectListProps } from '../lib/static-props'
-import Intro from '../../app/components/Intro/Intro'
 
 export async function getStaticProps() {
   return {
@@ -7,10 +6,10 @@ export async function getStaticProps() {
   }
 }
 
-const Home = () => {
+const Contact = () => {
   return (
-    <Intro />
+    <div>COntact</div>
   )
 }
 
-export default Home
+export default Contact

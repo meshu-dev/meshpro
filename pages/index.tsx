@@ -16,3 +16,17 @@ const Projects = ({ types, projects }) => {
 }
 
 export default Projects;
+
+
+/*
+import Intro from '../app/components/Intro/Intro'
+
+const Home = () => {
+  return (
+    <Intro />
+  )
+}
+
+export default Home */
+
+

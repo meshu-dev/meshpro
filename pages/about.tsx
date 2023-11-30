@@ -1,5 +1,5 @@
-import Layout from '../app/components/Layout/Layout';
-import { getAboutProps } from '../app/lib/static-props';
+import Layout from '../app/components/Layout/Layout'
+import { getAboutProps } from '../app/lib/static-props'
 
 export async function getStaticProps() {
   return {

@@ -13,8 +13,16 @@ import ListItemText from '@mui/material/ListItemText';
 const Header = () => {
   const [menuOpen, setMenuOpen] = React.useState(false);
 
+  /*
   const navLinks = [
-    { label: "Projects", link: "/" },
+    { label: "Home", link: "/" },
+    { label: "About", link: "/about" },
+    { label: "Projects", link: "/projects" },
+    { label: "Contact", link: "/contact" }
+  ]; */
+
+  const navLinks = [
+    { label: "Home", link: "/" },
     { label: "About", link: "/about" }
   ];
 
@@ -25,14 +33,6 @@ const Header = () => {
   return (
     <header id={ styles['header'] }>
       <h1>Mesh&apos;s Portfolio</h1>
-      <nav>
-        { navLinks.map((data, index) => (
-          <HeaderLink
-            key={ `header-link-${index + 1}` }
-            name={ data['label'] }
-            url={ data['link'] === '/' ? '/projects' : data['link'] } />
-        )) }
-      </nav>
       <IconButton
         size="large"
         edge="start"

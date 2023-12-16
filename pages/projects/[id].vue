@@ -6,15 +6,16 @@
   import { getProjectsByType } from '@/services/project'
 
   const route = useRoute()
-  const authData = await login()
+  //const authData = await login()
 
   let types    = []
   let projects = []
 
+  /*
   if (authData?.token) {
     types = await getTypes(authData.token)
     projects = await getProjectsByType(authData.token, route.params.id)
-  }
+  } */
 </script>
 
 <template>

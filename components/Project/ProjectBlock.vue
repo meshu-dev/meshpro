@@ -50,12 +50,12 @@
   background-color: #FFF;
   color: #000;
 }
-.p-card::v-deep .p-card-title {
+.p-card:deep .p-card-title {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.p-card::v-deep .p-card-content {
+.p-card:deep .p-card-content {
   display: flex;
   gap: 15px;
 }

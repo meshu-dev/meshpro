@@ -5,18 +5,19 @@
   import { getTypes } from '@/services/type'
   import { getProjects } from '@/services/project'
 
-  //const authData = await login()
+  const authData = await login()
 
   let types    = []
   let projects = []
 
-  /*
+  console.log('Projects Auth', authData?.token)
+
   if (authData?.token) {
     types = await getTypes(authData.token)
     projects = await getProjects(authData.token)
 
     console.log('projects', projects)
-  }*/
+  }
 </script>
 
 <template>

@@ -50,7 +50,7 @@
   background-color: #FFF;
   color: #000;
 }
-.
+
 /*p-card::v-deep .p-card-title {
   display: flex;
   align-items: center;

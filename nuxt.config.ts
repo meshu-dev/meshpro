@@ -7,6 +7,14 @@ export default defineNuxtConfig({
     '~/assets/css/main.css'
   ],
   modules: [
-    'nuxt-primevue'
-  ]
+    'nuxt-primevue',
+    'vue-recaptcha/nuxt'
+  ],
+  runtimeConfig: {
+    public: {
+      recaptcha: {
+        v3SiteKey: process.env.GOOGLE_RECAPTCHA_KEY
+      }
+    }
+  }
 })

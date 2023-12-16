@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "deploy": "nuxt build && nuxt generate"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -15,5 +16,8 @@
     "nuxt-primevue": "^0.2.2",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "vue-recaptcha": "^3.0.0-alpha.6"
   }
 }

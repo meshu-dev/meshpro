@@ -22,6 +22,20 @@
       statusMsg.value = { type: 'error', text: 'All fields are required' } as StatusMsg
     }
   }
+
+  //import { useRecaptchaProvider } from 'vue-recaptcha'
+  //useRecaptchaProvider()
+
+  import { useChallengeV3 } from 'vue-recaptcha'
+
+  const { execute } = useChallengeV3('submit')
+
+const onSubmit2 = async () => {
+  console.log('aaa', execute)
+  const response = await execute()
+  // do something with response
+  console.log(response)
+}
 </script>
 
 <template>
@@ -33,7 +47,7 @@
         <p>I will try my best to get back to you as soon as possible.</p>
       </div>
     </div>
-    <form @submit.prevent="onSubmit">
+    <form @submit.prevent="onSubmit2">
       <Message v-if="statusMsg" :severity="statusMsg.type">{{ statusMsg.text }}</Message>
       <div class="form-field">
         <label for="name" class="p-sr-only">Name</label>

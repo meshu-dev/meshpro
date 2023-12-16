@@ -26,7 +26,7 @@
   const menu = ref()
   const items = ref(repositories)
 
-  const toggle = (event) => {
+  const toggle = (event: any) => {
     menu.value.toggle(event);
   }
 </script>

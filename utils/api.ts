@@ -6,8 +6,12 @@ export const getAuthHeader = (token: string): AuthHeader => {
   }
 }
 
-export const getUrl = (path: string): string => {
+export const getPortfolioApiUrl = (path: string): string => {
   return String(`${process.env.API_URL}/${path}`)
+}
+
+export const getMailerUrl = (path: string): string => {
+  return String(`${process.env.MAILER_URL}/${path}`)
 }
 
 export const getLoginDetails = (): LoginDetails => {

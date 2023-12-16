@@ -1,28 +1,27 @@
-<script setup>
-  import InputText from 'primevue/inputtext';
-  import Textarea from 'primevue/textarea';
-  import InlineMessage from 'primevue/inlinemessage';
-  import Button from 'primevue/button';
-  import { ref, reactive, computed } from 'vue';
+<script setup lang="ts">
+  import InputText from 'primevue/inputtext'
+  import Textarea from 'primevue/textarea'
+  import Message from 'primevue/message'
+  import Button from 'primevue/button'
+  import { ref, type Ref } from 'vue'
+  import type { ContactMessage, StatusMsg } from '@/types'
+  import { sendMessage } from '@/services/contact'
+  import { getBlankContactMessage, hasFields, resetForm } from '@/utils/contact'
 
-  const contact = reactive({ name: '', email: '', message: '' });
+  const statusMsg: Ref<StatusMsg | null> = ref(null)
+  const contactMsg: Ref<ContactMessage> = ref(getBlankContactMessage())
 
-  const onSubmit = (values) => {
-    console.log('V', contact, contact.name);
-    resetForm();
+  const onSubmit = async () => {
+    if (hasFields(contactMsg)) {
+      const response = await sendMessage(contactMsg.value)
 
-    if (values.value && values.value.length > 0) {
-      //toast.add({ severity: 'info', summary: 'Form Submitted', detail: values.value, life: 3000 });
-      //resetForm();
+      console.log('onSubmit - response', response)
+
+      resetForm(contactMsg)
+    } else {
+      statusMsg.value = { type: 'error', text: 'All fields are required' } as StatusMsg
     }
-    return false;
-  };
-
-  const resetForm = () => {
-    contact.name = '';
-    contact.email = '';
-    contact.message = '';
-  };
+  }
 </script>
 
 <template>
@@ -35,17 +34,18 @@
       </div>
     </div>
     <form @submit.prevent="onSubmit">
+      <Message v-if="statusMsg" :severity="statusMsg.type">{{ statusMsg.text }}</Message>
       <div class="form-field">
         <label for="name" class="p-sr-only">Name</label>
-        <InputText id="name" placeholder="Name" v-model="contact.name" />
+        <InputText id="name" placeholder="Name" v-model="contactMsg.name" />
       </div>
       <div class="form-field">
         <label for="email" class="p-sr-only">Email</label>
-        <InputText id="email" placeholder="Email" v-model="contact.email" />
+        <InputText id="email" placeholder="Email" v-model="contactMsg.email" />
       </div>
       <div class="form-field">
         <label for="form-message-field" class="p-sr-only">Message</label>
-        <Textarea id="form-message-field" rows="5" cols="30" placeholder="Message"  v-model="contact.message" />
+        <Textarea id="form-message-field" rows="5" cols="30" placeholder="Message" v-model="contactMsg.message" />
       </div>
       <Button type="submit" label="Submit" rounded />
     </form>
@@ -64,7 +64,7 @@
 }
 
 .form-field {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 #form-message-field {

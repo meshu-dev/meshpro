@@ -1,5 +1,11 @@
 export type LoginDetails = { email: string, password: string }
+
 export type AuthHeader = { Authorization: string }
+
+export type StatusMsgType = 'success' | 'info' | 'warn' | 'error'
+export type StatusMsg = { type: StatusMsgType, text: string }
+
+export type ContactMessage = { token: string, name: string, email: string, message: string }
 
 export type ApiResponse = {
   data: any,

@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import Card from 'primevue/card'
   import Image from 'primevue/image'
-  import Chip from 'primevue/chip'
+  import Tag from 'primevue/tag'
   import LinkButton from '@/components/Button/LinkButton'
   import GitRepoButton from '@/components/Button/GitRepoButton'
   import type { Project } from '@/types'
@@ -25,14 +25,16 @@
       <Image imageClass="project-block-image" :src="props.project.imageUrl ?? placeholderUrl" alt="Image" />
     </template>
     <template #title>
-      {{ props.project.name }}
-      <span v-if="hideType === false">
-        <Chip :label="props.project.type.name" />
-      </span>
+      {{ props.project.description }}
     </template>
     <template #content>
-      <LinkButton :url="props.project.url" label="View" />
-      <GitRepoButton :repositories="props.project.repositories" />
+      <div class="card-content-technologies">
+        <LinkButton :url="props.project.url" label="View" />
+        <GitRepoButton :repositories="props.project.repositories" />
+      </div>
+      <div class="card-content-technologies">
+        <Tag v-for="technology of props.project.technologies" :value="technology.name" />
+      </div>
     </template>
   </Card>
 </template>
@@ -44,11 +46,6 @@
 .p-card {
   width: 650px;
 }
-.p-chip {
-  background-color: #FFF;
-  color: #000;
-}
-
 .p-card::v-deep .p-card-title {
   display: flex;
   align-items: center;
@@ -56,6 +53,15 @@
 }
 .p-card::v-deep .p-card-content {
   display: flex;
-  gap: 15px;
+  justify-content: space-between;
+}
+.card-content-technologies {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.p-tag {
+  background-color: #FFF;
+  height: 25px;
 }
 </style>

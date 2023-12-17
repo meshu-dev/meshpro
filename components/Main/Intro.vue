@@ -1,6 +1,8 @@
 <script setup>
-  import Image from 'primevue/image';
-  import Button from 'primevue/button';
+  import Image from 'primevue/image'
+  import Button from 'primevue/button'
+  import IconButton from '@/components/Button/IconButton'
+  import { IconEnum } from '@/enums/icon' 
 </script>
 
 <template>
@@ -12,12 +14,8 @@
       <div id="intro-buttons">
         <Button label="Contact me" rounded />
         <Button label="Download CV" rounded outlined />
-        <NuxtLink to="https://github.com/meshu-dev" target="_blank">
-          <Image imageClass="intro-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="Github" />
-        </NuxtLink>
-        <NuxtLink to="https://github.com/meshu-dev" target="_blank">
-          <Image imageClass="intro-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" alt="LinkedIn" />
-        </NuxtLink>
+        <IconButton :iconUrl="IconEnum.Github" iconText="Github" url="https://github.com/meshu-dev" />
+        <IconButton :iconUrl="IconEnum.LinkedIn" iconText="LinkedIn" url="https://github.com/meshu-dev" />
       </div>
     </div>
   </div>

@@ -11,12 +11,14 @@
     projects: null,
     hideType: false
   })
+
+  console.log('props.projects', props.projects)
 </script>
 
 <template>
   <div id="project-list">
     <ProjectBlock
-      v-for="project in projects"
+      v-for="project in props.projects"
       :project="project"
       :hideType="props.hideType" />
   </div>

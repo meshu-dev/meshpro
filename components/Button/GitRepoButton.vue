@@ -31,7 +31,7 @@
 
 <template>
   <template v-if="repositories.length > 1">
-    <Button type="button" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" label="Github" />
+    <Button type="button" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" label="Github" rounded />
     <Menu ref="menu" id="overlay_menu" :model="items" :popup="true">
       <template #item="{ item }">
         <NuxtLink :to="item.url" target="_blank">

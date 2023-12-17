@@ -47,12 +47,19 @@ export interface GitRepository {
   url: string
 }
 
+export interface Technology {
+  id: number,
+  name: string
+}
+
 export interface Project {
   id: number,
   type: Type,
   name: string,
+  description: string,
   url: string,
   imageUrl: string,
   repositories: GitRepository[]
+  technologies: Technology[]
 }
 

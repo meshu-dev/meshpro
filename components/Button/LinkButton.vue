@@ -2,6 +2,7 @@
   type Props = {
     label: string | null
     url: string | null
+
   }
 
   const props = withDefaults(defineProps<Props>(), {
@@ -11,7 +12,7 @@
 </script>
 
 <template>
-  <Button v-if="url" >
-    <NuxtLink :to="url" target="_blank">{{ label }}</NuxtLink>
+  <Button v-if="props.url" rounded>
+    <NuxtLink :to="props.url" target="_blank">{{ props.label }}</NuxtLink>
   </Button>
 </template>

@@ -41,6 +41,6 @@
     </Menu>
   </template>
   <template v-else-if="repositories.length == 1">
-    <LinkButton :url="repositories[0].url" label="Github" />
+    <LinkButton :url="repositories[0].url" label="Github" :isRounded="true" :isNewTabLink="true" />
   </template>
 </template>

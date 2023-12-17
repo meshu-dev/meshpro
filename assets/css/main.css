@@ -43,3 +43,7 @@ h1 {
 a {
   color: inherit;
 }
+
+a.p-button {
+  color: #000;
+}

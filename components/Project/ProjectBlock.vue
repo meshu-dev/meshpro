@@ -29,7 +29,7 @@
     </template>
     <template #content>
       <div class="card-content-technologies">
-        <LinkButton :url="props.project.url" label="View" />
+        <LinkButton :url="props.project.url" label="View" :isRounded="true" :isNewTabLink="true" />
         <GitRepoButton :repositories="props.project.repositories" />
       </div>
       <div class="card-content-technologies">

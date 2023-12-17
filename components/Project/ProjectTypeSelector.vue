@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import Button from 'primevue/button'
+  import LinkButton from '@/components/Button/LinkButton'
   import type { Type } from '@/types'
 
   type Props = {
@@ -15,12 +15,15 @@
 
 <template>
   <span class="p-buttonset">
-    <Button :disabled="selected === 'all' ? true : false">
-      <NuxtLink to="/projects">All</NuxtLink>
-    </Button>
-    <Button v-for="projectType in types" :disabled="selected == projectType.id ? true : false">
-      <NuxtLink :to="`/projects/${projectType.id}`">{{ projectType.name }}</NuxtLink>
-    </Button>
+    <LinkButton
+      url="/projects"
+      label="All"
+      :isDisabled="selected === 'all' ? true : false" />
+    <LinkButton
+      v-for="projectType in types"
+      :url="`/projects/${projectType.id}`"
+      :label="projectType.name"
+      :isDisabled="selected == projectType.id ? true : false" />
   </span>
 </template>
 

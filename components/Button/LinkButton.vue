@@ -2,17 +2,26 @@
   type Props = {
     label: string | null
     url: string | null
-
+    isRounded: boolean
+    isDisabled: boolean
+    isNewTabLink: boolean
   }
 
   const props = withDefaults(defineProps<Props>(), {
     label: null,
-    url: null
+    url: null,
+    isRounded: false,
+    isDisabled: false,
+    isNewTabLink: false
   })
 </script>
 
 <template>
-  <Button v-if="props.url" rounded>
-    <NuxtLink :to="props.url" target="_blank">{{ props.label }}</NuxtLink>
-  </Button>
+  <NuxtLink
+    v-if="props.url"
+    :to="props.url"
+    :class="`p-button font-bold ${isRounded ? 'p-button-rounded' : ''} ${isDisabled ? 'p-disabled' : ''}`"
+    :target="isNewTabLink ? '_blank' : '_self'">
+    {{ props.label }}
+  </NuxtLink>
 </template>

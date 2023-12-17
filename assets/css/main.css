@@ -25,7 +25,7 @@ html, body {
 }
 
 #main {
-  width: 1440px;
+  max-width: 1440px;
   margin: 80px auto 40px;
   padding: 0 40px;
 }
@@ -46,4 +46,10 @@ a {
 
 a.p-button {
   color: #000;
+}
+
+@media (max-width: 1440px) {
+  #main {
+    width: auto;
+  }
 }

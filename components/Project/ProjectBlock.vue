@@ -28,7 +28,7 @@
       {{ props.project.description }}
     </template>
     <template #content>
-      <div class="card-content-technologies">
+      <div class="card-content-buttons">
         <LinkButton :url="props.project.url" label="View" :isRounded="true" :isNewTabLink="true" />
         <GitRepoButton :repositories="props.project.repositories" />
       </div>
@@ -44,7 +44,7 @@
   border-radius: 6px;
 }
 .p-card {
-  width: 650px;
+  max-width: 650px;
 }
 .p-card::v-deep .p-card-title {
   display: flex;
@@ -55,6 +55,13 @@
   display: flex;
   justify-content: space-between;
 }
+.p-card::v-deep .project-block-image {
+  width: 650px;
+}
+.card-content-buttons {
+  display: flex;
+  gap: 8px;
+}
 .card-content-technologies {
   display: flex;
   align-items: center;
@@ -63,5 +70,19 @@
 .p-tag {
   background-color: #FFF;
   height: 25px;
+}
+
+@media (max-width: 1440px) {
+  .p-card,
+  .p-card::v-deep .project-block-image {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .p-card,
+  .p-card::v-deep .project-block-image {
+    max-width: 650px;
+  }
 }
 </style>

@@ -1,6 +1,7 @@
 <script setup>
   import Image from 'primevue/image'
   import Button from 'primevue/button'
+  import LinkButton from '@/components/Button/LinkButton'
   import IconButton from '@/components/Button/IconButton'
   import { IconEnum } from '@/enums/icon' 
 </script>
@@ -12,7 +13,7 @@
       <div id="intro-text-1">Hello, I'm Mesh</div>
       <div id="intro-text-2">I'm a Software Developer with 15 years experience</div>
       <div id="intro-buttons">
-        <Button label="Contact me" rounded />
+        <LinkButton url="/contact" label="Contact me" :isRounded="true" />
         <Button label="Download CV" rounded outlined />
         <IconButton :iconUrl="IconEnum.Github" iconText="Github" url="https://github.com/meshu-dev" />
         <IconButton :iconUrl="IconEnum.LinkedIn" iconText="LinkedIn" url="https://github.com/meshu-dev" />
@@ -49,5 +50,18 @@
 #intro-buttons {
   display: flex;
   gap: 20px;
+}
+
+@media (max-width: 1100px) {
+  #intro {
+    flex-direction: column;
+  }
+  #intro-text-1,
+  #intro-text-2 {
+    text-align: center;
+  }
+  #intro-buttons {
+    justify-content: center;
+  }
 }
 </style>

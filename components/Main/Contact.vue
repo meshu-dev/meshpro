@@ -23,9 +23,6 @@
     }
   }
 
-  //import { useRecaptchaProvider } from 'vue-recaptcha'
-  //useRecaptchaProvider()
-
   import { useChallengeV3 } from 'vue-recaptcha'
 
   const { execute } = useChallengeV3('submit')
@@ -85,5 +82,22 @@ const onSubmit2 = async () => {
   width: 900px;
   height: 400px;
   resize: none;
+}
+
+@media (max-width: 1440px) {
+  #form-message-field {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 1075px) {
+  #contact {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #form-message-field {
+    width: 100%;
+  }
 }
 </style>

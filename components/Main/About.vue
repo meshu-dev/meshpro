@@ -28,4 +28,16 @@
   display: flex;
   gap: 100px;
 }
+
+.p-image {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1075px) {
+  #about {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
 </style>

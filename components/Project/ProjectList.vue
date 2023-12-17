@@ -32,4 +32,10 @@
   margin-top: 40px;
   row-gap: 60px;
 }
+
+@media (max-width: 1440px) {
+  #project-list {
+    justify-content: space-around;
+  }
+}
 </style>

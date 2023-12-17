@@ -25,7 +25,7 @@ html, body {
 }
 
 #main {
-  max-width: 1440px;
+  width: 1440px;
   margin: 80px auto 40px;
   padding: 0 40px;
 }
@@ -50,6 +50,6 @@ a.p-button {
 
 @media (max-width: 1440px) {
   #main {
-    width: auto;
+    width: 100%;
   }
 }

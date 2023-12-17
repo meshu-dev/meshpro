@@ -85,4 +85,11 @@
     max-width: 650px;
   }
 }
+
+@media (max-width: 775px) {
+  .p-card,
+  .p-card::v-deep .project-block-image {
+    max-width: 500px;
+  }
+}
 </style>

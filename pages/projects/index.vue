@@ -10,6 +10,8 @@
   let types    = []
   let projects = []
 
+  console.log('authData', authData)
+
   if (authData?.token) {
     types = await getTypes(authData.token)
     projects = await getProjects(authData.token)

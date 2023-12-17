@@ -2,6 +2,8 @@ export type LoginDetails = { email: string, password: string }
 
 export type AuthHeader = { Authorization: string }
 
+export type GitRepositoryRef = { label: string, url: string }
+
 export type StatusMsgType = 'success' | 'info' | 'warn' | 'error'
 export type StatusMsg = { type: StatusMsgType, text: string }
 

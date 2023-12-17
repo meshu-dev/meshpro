@@ -16,5 +16,7 @@ export const login = async (): Promise<any> => {
     )
   )
 
+  console.log('login', toRaw(data.value));
+
   return toRaw(data.value) as Auth
 }

@@ -2,7 +2,7 @@
   import Card from 'primevue/card'
   import Image from 'primevue/image'
   import Chip from 'primevue/chip'
-  import Menu from 'primevue/menu'
+  import LinkButton from '@/components/Button/LinkButton'
   import GitRepoButton from '@/components/Button/GitRepoButton'
   import type { Project } from '@/types'
 
@@ -31,9 +31,7 @@
       </span>
     </template>
     <template #content>
-      <Button v-if="props.project.url" >
-        <NuxtLink :to="props.project.url">View</NuxtLink>
-      </Button>
+      <LinkButton :url="props.project.url" label="View" />
       <GitRepoButton :repositories="props.project.repositories" />
     </template>
   </Card>
@@ -51,7 +49,7 @@
   color: #000;
 }
 
-p-card::v-deep .p-card-title {
+.p-card::v-deep .p-card-title {
   display: flex;
   align-items: center;
   gap: 12px;

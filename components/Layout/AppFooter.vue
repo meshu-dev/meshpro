@@ -1,5 +1,4 @@
 <script setup lang="ts">
-  import Image from 'primevue/image'
   import ImageLink from '@/components/Image/ImageLink'
 </script>
 
@@ -9,7 +8,7 @@
       <span id="footer-copyright">Copyright &copy; Mesh. All rights reserved</span>
       <div>
         <span>Built with&nbsp;</span>
-        <ImageLink imgUrl="/img/nuxt-logo.svg" imgText="Nuxt Logo" url="https://nuxt.com" width="80" />
+        <ImageLink imgUrl="/img/nuxt-logo.svg" imgText="Nuxt Logo" url="https://nuxt.com" :width="80" />
       </div>
     </div>
   </footer>

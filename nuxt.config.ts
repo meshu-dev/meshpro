@@ -25,7 +25,7 @@ export default defineNuxtConfig({
       recaptcha: {
         v3SiteKey: process.env.GOOGLE_RECAPTCHA_KEY
       },
-      mailerApi: process.env.NUXT_PUBLIC_MAILER_URL
+      mailerUrl: process.env.MAILER_URL
     }
   },
   plugins: [

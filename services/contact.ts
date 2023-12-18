@@ -3,7 +3,7 @@ import type { ApiResponse, ContactMessage } from '@/types'
 import { getMailerUrl } from '@/utils/api'
 
 export const sendMessage = async (contactMessage: ContactMessage): Promise<any> => {
-  const mailerUrl: string = getMailerUrl('contact')
+  const mailerUrl: string = getMailerUrl()
   const { data, pending, error, refresh } = await useFetch(
     mailerUrl,
     {

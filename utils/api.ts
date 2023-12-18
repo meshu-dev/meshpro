@@ -12,7 +12,8 @@ export const getPortfolioApiUrl = (path: string): string => {
 }
 
 export const getMailerUrl = (path: string): string => {
-  return String(`${process.env.MAILER_URL}/${path}`)
+  console.log('getMailerUrl', `${process.env.NUXT_PUBLIC_MAILER_URL}/${path}`)
+  return String(`${process.env.NUXT_PUBLIC_MAILER_URL}/${path}`)
 }
 
 export const getLoginDetails = (): LoginDetails => {

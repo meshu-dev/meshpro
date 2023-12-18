@@ -4,14 +4,16 @@
   import Message from 'primevue/message'
   import Button from 'primevue/button'
   import { ref, type Ref } from 'vue'
+  import { useChallengeV3 } from 'vue-recaptcha'
   import type { ContactMessage, StatusMsg } from '@/types'
   import { sendMessage } from '@/services/contact'
   import { getBlankContactMessage, hasFields, resetForm } from '@/utils/contact'
 
   const statusMsg: Ref<StatusMsg | null> = ref(null)
-  const contactMsg: Ref<ContactMessage> = ref(getBlankContactMessage())
+  const contactMsg: Ref<ContactMessage>  = ref(getBlankContactMessage())
+  const { execute }                      = useChallengeV3('submit')
 
-  const onSubmit = async () => {
+  const sendContactMsg = async () => {
     if (hasFields(contactMsg)) {
       const response = await sendMessage(contactMsg.value)
 
@@ -23,16 +25,21 @@
     }
   }
 
-  import { useChallengeV3 } from 'vue-recaptcha'
+  const onSubmit = async () => {
+    if (statusMsg.value) {
+      statusMsg.value = null
+    }
 
-  const { execute } = useChallengeV3('submit')
+    const token: string = await execute()
+    console.log('Google ReCaptcha - execute', token)
 
-const onSubmit2 = async () => {
-  console.log('aaa', execute)
-  const response = await execute()
-  // do something with response
-  console.log(response)
-}
+    if (token) {
+      contactMsg.value.token = token
+      sendContactMsg()
+    } else {
+      statusMsg.value = { type: 'error', text: 'An error occurred validating submission. Please try again later.' } as StatusMsg
+    }
+  }
 </script>
 
 <template>
@@ -44,7 +51,7 @@ const onSubmit2 = async () => {
         <p>I will try my best to get back to you as soon as possible.</p>
       </div>
     </div>
-    <form @submit.prevent="onSubmit2">
+    <form @submit.prevent="onSubmit">
       <Message v-if="statusMsg" :severity="statusMsg.type">{{ statusMsg.text }}</Message>
       <div class="form-field">
         <label for="name" class="p-sr-only">Name</label>

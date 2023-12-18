@@ -12,6 +12,7 @@ export const getBlankContactMessage = (): ContactMessage => {
 
 export const hasFields = (contactMsg: Ref<ContactMessage>): boolean => {
   return Boolean(
+    contactMsg.value.token &&
     contactMsg.value.name &&
     contactMsg.value.email &&
     contactMsg.value.message

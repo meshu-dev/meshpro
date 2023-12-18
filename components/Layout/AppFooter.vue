@@ -9,7 +9,7 @@
       <span id="footer-copyright">Copyright &copy; Mesh. All rights reserved</span>
       <div>
         <span>Built with&nbsp;</span>
-        <ImageLink imgUrl="/_nuxt/assets/images/nuxt-logo.svg" imgText="Nuxt Logo" url="https://nuxt.com" width="80" />
+        <ImageLink imgUrl="/img/nuxt-logo.svg" imgText="Nuxt Logo" url="https://nuxt.com" width="80" />
       </div>
     </div>
   </footer>

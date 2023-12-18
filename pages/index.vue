@@ -2,7 +2,7 @@
   import Image from 'primevue/image'
   import Button from 'primevue/button'
   import LinkButton from '@/components/Button/LinkButton'
-  import IconButton from '@/components/Button/IconButton'
+  import IconLink from '@/components/Image/IconLink'
   import { IconEnum } from '@/enums/icon' 
 </script>
 
@@ -15,8 +15,8 @@
       <div id="intro-buttons">
         <LinkButton url="/contact" label="Contact me" :isRounded="true" />
         <Button label="Download CV" rounded outlined />
-        <IconButton :iconUrl="IconEnum.Github" iconText="Github" url="https://github.com/meshu-dev" />
-        <IconButton :iconUrl="IconEnum.LinkedIn" iconText="LinkedIn" url="https://github.com/meshu-dev" />
+        <IconLink icon="fa-brands fa-github" url="https://github.com/meshu-dev" />
+        <IconLink icon="fa-brands fa-linkedin" url="https://github.com/meshu-dev" />
       </div>
     </div>
   </div>

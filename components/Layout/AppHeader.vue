@@ -5,6 +5,7 @@
 <template>
   <header>
     <MenuLink label="Mesh" url="/" />
+    <span id="logo">MESH</span>
     <nav>
       <MenuLink label="About" url="/about" />
       <MenuLink label="Projects" url="/projects" />
@@ -14,6 +15,8 @@
 </template>
 
 <style scoped>
+
+
 header {
   display: flex;
   justify-content: space-between;
@@ -26,3 +29,4 @@ header nav {
   gap: 20px;
 }
 </style>
+

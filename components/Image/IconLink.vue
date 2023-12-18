@@ -1,21 +1,17 @@
 <script setup lang="ts">
-  import Image from 'primevue/image'
-
   type Props = {
-    iconUrl: string | null
-    iconText: string
+    icon: string
     url: string
   }
 
   const props = withDefaults(defineProps<Props>(), {
-    iconUrl: null,
-    iconText: '',
+    icon: '',
     url: ''
   })
 </script>
 
 <template>
   <NuxtLink :to="props.url" target="_blank">
-    <Image imageClass="intro-icon" :src="props.iconUrl" :alt="props.iconText" />
+    <font-awesome-icon :icon="props.icon" size="2xl" />
   </NuxtLink>
 </template>

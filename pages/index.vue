@@ -1,17 +1,28 @@
-<script setup>
+<script setup lang="ts">
   import Image from 'primevue/image'
   import Button from 'primevue/button'
   import LinkButton from '@/components/Button/LinkButton'
   import IconLink from '@/components/Image/IconLink'
-  import { ImageEnum } from '@/enums/image' 
+  import { ImageEnum } from '@/enums/image'
+  import type { Profile } from '@/types'
+  import { login } from '@/services/auth'
+  import { getProfile } from '@/services/profile'
+
+  let profile: Profile | null = null
+
+  const authData = await login()
+
+  if (authData?.token) {
+    profile = await getProfile(authData.token)
+  }
 </script>
 
 <template>
-  <div id="intro">
+  <div v-if="profile" id="intro">
     <Image id="intro-image" :src="ImageEnum.Intro" alt="Image" />
     <div>
       <div id="intro-text-1">Hello, I'm Mesh</div>
-      <div id="intro-text-2">I'm a Software Developer with 15 years experience</div>
+      <div id="intro-text-2">I'm a Software Developer with {{ profile.yearsExperience }} years experience</div>
       <div id="intro-buttons">
         <LinkButton url="/contact" label="Contact me" :isRounded="true" />
         <Button label="Download CV" rounded outlined />

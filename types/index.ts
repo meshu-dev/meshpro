@@ -41,6 +41,12 @@ export interface Type {
   name: string
 }
 
+export interface Profile {
+  id: number,
+  text: string,
+  yearsExperience: number
+}
+
 export interface GitRepository {
   id: number,
   name: string,

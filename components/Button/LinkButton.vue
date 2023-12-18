@@ -3,8 +3,8 @@
     label: string | null
     url: string | null
     isRounded: boolean
-    isDisabled: boolean
-    isNewTabLink: boolean
+    isDisabled?: boolean
+    isNewTabLink?: boolean
   }
 
   const props = withDefaults(defineProps<Props>(), {

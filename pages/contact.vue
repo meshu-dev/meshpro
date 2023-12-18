@@ -84,6 +84,10 @@ const onSubmit2 = async () => {
   resize: none;
 }
 
+p {
+  line-height: 35px;
+}
+
 @media (max-width: 1440px) {
   #form-message-field {
     max-width: 700px;

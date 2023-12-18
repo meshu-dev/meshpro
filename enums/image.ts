@@ -1,4 +1,4 @@
 export enum ImageEnum {
-  Github   = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
-  LinkedIn = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg'
+  Intro = 'https://placehold.co/300x300',
+  About = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg'
 }

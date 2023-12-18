@@ -3,12 +3,12 @@
   import Button from 'primevue/button'
   import LinkButton from '@/components/Button/LinkButton'
   import IconLink from '@/components/Image/IconLink'
-  import { IconEnum } from '@/enums/icon' 
+  import { ImageEnum } from '@/enums/image' 
 </script>
 
 <template>
   <div id="intro">
-    <Image id="intro-image" src="https://placehold.co/300x300" alt="Image" />
+    <Image id="intro-image" :src="ImageEnum.Intro" alt="Image" />
     <div>
       <div id="intro-text-1">Hello, I'm Mesh</div>
       <div id="intro-text-2">I'm a Software Developer with 15 years experience</div>

@@ -20,6 +20,7 @@
       console.log('onSubmit - response', response)
 
       resetForm(contactMsg)
+      statusMsg.value = { type: 'success', text: 'Message has been sent' } as StatusMsg
     } else {
       statusMsg.value = { type: 'error', text: 'All fields are required' } as StatusMsg
     }

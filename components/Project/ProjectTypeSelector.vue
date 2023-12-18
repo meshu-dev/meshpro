@@ -16,12 +16,12 @@
 <template>
   <span class="p-buttonset">
     <LinkButton
-      url="/projects"
+      url="/portfolio"
       label="All"
       :isDisabled="selected === 'all' ? true : false" />
     <LinkButton
       v-for="projectType in types"
-      :url="`/projects/${projectType.id}`"
+      :url="`/portfolio/${projectType.id}`"
       :label="projectType.name"
       :isDisabled="selected == projectType.id ? true : false" />
   </span>

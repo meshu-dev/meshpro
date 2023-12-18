@@ -31,7 +31,7 @@ footer {
 }
 
 #footer-copyright {
-  padding-top: 6px;
+  padding-top: 3px;
 }
 
 @media (max-width: 775px) {

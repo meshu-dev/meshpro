@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '~/assets/css/main.css'
   ],
   modules: [
+    '@nuxtjs/google-fonts',
     'nuxt-primevue',
     'vue-recaptcha/nuxt'
   ],
@@ -20,5 +21,11 @@ export default defineNuxtConfig({
   },
   plugins: [
     '~/plugins/font-awesome'
-  ]
+  ],
+  googleFonts: {
+    families: {
+      Roboto: true,
+      "Bebas Neue": true
+    }
+  }
 })

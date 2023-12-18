@@ -7,17 +7,22 @@
     <Image id="intro-image" src="https://placehold.co/500x500" alt="Image" />
     <div>
       <h1>About Me</h1>
-      <div>I am a full stack web developer with a passion for creating interactive and responsive web applications. 
-      I have experience working with JavaScript, React, Redux, Node.js, Express, PostgreSQL, Sequelize, HTML, CSS, 
-      and Git. I am a quick learner and I am always looking to expand my knowledge and skill set. I am a team player 
-      and I am excited to work with others to create amazing applications.</div>
+      <p>I'm a full stack developer with web development experience in PHP / Javascript, 
+        Amazon AWS linux server related setup / maintenance work and mobile development 
+        implementing native / web apps for both Android and iOS devices.</p>
+      <p>For a long time I've been interested in software development and continue to spend 
+        time researching and improving upon my skills and experience in new and popular 
+        technologies.</p>
+      <h2>Skills</h2>
       <ul>
         <li>PHP</li>
-        <li>PHP</li>
-        <li>PHP</li>
-        <li>PHP</li>
-        <li>PHP</li>
-        <li>PHP</li>
+        <li>Laravel</li>
+        <li>Node.js</li>
+        <li>MySQL</li>
+        <li>MongoDB</li>
+        <li>Vue.js</li>
+        <li>React</li>
+        <li>Angular</li>
       </ul>
     </div>
   </div>
@@ -32,6 +37,14 @@
 .p-image {
   display: flex;
   justify-content: center;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+li {
+  margin-bottom: 8px;
 }
 
 @media (max-width: 1075px) {

@@ -12,7 +12,9 @@ export const getPortfolioApiUrl = (path: string): string => {
 }
 
 export const getMailerUrl = (path: string): string => {
+  const runtimeConfig = useRuntimeConfig()
   console.log('getMailerUrl', `${process.env.NUXT_PUBLIC_MAILER_URL}/${path}`)
+  console.log('runtimeConfig', runtimeConfig, runtimeConfig.public.mailerApi)
   return String(`${process.env.NUXT_PUBLIC_MAILER_URL}/${path}`)
 }
 

@@ -13,7 +13,7 @@ const introDetails: Intro | null = await getIntroText()
 
 <template>
   <div v-if="introDetails" id="intro">
-    <Image id="intro-image" :src="ImageEnum.Intro" alt="Image" />
+    <Image id="intro-image" :src="introDetails.imageUrl || ImageEnum.Intro" alt="Image" />
     <div>
       <div id="intro-text-1">{{ introDetails.line1 }}</div>
       <div id="intro-text-2">{{ introDetails.line2 }}</div>

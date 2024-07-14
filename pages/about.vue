@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Image from 'primevue/image'
+import { ImageEnum } from '@/enums/image'
 import { getAboutData } from '@/services/api'
 
 const aboutData: About | null = await getAboutData()
@@ -8,7 +9,7 @@ const technologies: Technology[] = aboutData?.skills[0].technologies || []
 
 <template>
   <div v-if="aboutData" id="about">
-    <Image id="intro-image" src="https://placehold.co/500x500" alt="Image" />
+    <Image id="intro-image" :src="aboutData.imageUrl || ImageEnum.About" alt="Image" />
     <div>
       <h1>About Me</h1>
       <div v-html="aboutData.text" />

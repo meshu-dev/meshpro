@@ -41,39 +41,6 @@ export interface Type {
   name: string
 }
 
-export interface Profile {
-  id: number,
-  text: string,
-  yearsExperience: number
-}
-
-export interface GitRepository {
-  id: number,
-  name: string,
-  url: string
-}
-
-/*
-export interface Technology {
-  id: number,
-  name: string
-} 
-
-export interface Project {
-  id: number,
-  type: Type,
-  name: string,
-  description: string,
-  url: string,
-  imageUrl: string,
-  repositories: GitRepository[]
-  technologies: Technology[]
-} */
-
-
-
-
-
 export type Skill = {
   name: string,
   technologies: Technology[]
@@ -83,17 +50,19 @@ export type Technology = {
   name: string
 }
 
-export type Repository = {
+export type GitRepository = {
   name: string,
   url: string
 }
 
 export type Intro = {
+  imageUrl: string,
   line1: string,
   line2: string
 }
 
 export type About = {
+  imageUrl: string,
   text: string,
   skills: Skill[]
 }
@@ -102,6 +71,6 @@ export type Project = {
   name: string,
   description: string,
   url: string,
-  repositories: Repository[],
+  repositories: GitRepository[],
   technologies: Technology[]
 }

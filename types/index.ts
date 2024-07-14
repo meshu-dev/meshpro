@@ -53,10 +53,11 @@ export interface GitRepository {
   url: string
 }
 
+/*
 export interface Technology {
   id: number,
   name: string
-}
+} 
 
 export interface Project {
   id: number,
@@ -67,5 +68,40 @@ export interface Project {
   imageUrl: string,
   repositories: GitRepository[]
   technologies: Technology[]
+} */
+
+
+
+
+
+export type Skill = {
+  name: string,
+  technologies: Technology[]
 }
 
+export type Technology = {
+  name: string
+}
+
+export type Repository = {
+  name: string,
+  url: string
+}
+
+export type Intro = {
+  line1: string,
+  line2: string
+}
+
+export type About = {
+  text: string,
+  skills: Skill[]
+}
+
+export type Project = {
+  name: string,
+  description: string,
+  url: string,
+  repositories: Repository[],
+  technologies: Technology[]
+}

@@ -1,28 +1,20 @@
-<script setup>
-  import Image from 'primevue/image';
+<script setup lang="ts">
+import Image from 'primevue/image'
+import { getAboutData } from '@/services/api'
+
+const aboutData: About | null = await getAboutData()
+const technologies: Technology[] = aboutData?.skills[0].technologies || []
 </script>
 
 <template>
-  <div id="about">
+  <div v-if="aboutData" id="about">
     <Image id="intro-image" src="https://placehold.co/500x500" alt="Image" />
     <div>
       <h1>About Me</h1>
-      <p>I'm a full stack developer with web development experience in PHP / Javascript, 
-        Amazon AWS linux server related setup / maintenance work and mobile development 
-        implementing native / web apps for both Android and iOS devices.</p>
-      <p>For a long time I've been interested in software development and continue to spend 
-        time researching and improving upon my skills and experience in new and popular 
-        technologies.</p>
+      <div v-html="aboutData.text" />
       <h2>Skills</h2>
       <ul>
-        <li>PHP</li>
-        <li>Laravel</li>
-        <li>Node.js</li>
-        <li>MySQL</li>
-        <li>MongoDB</li>
-        <li>Vue.js</li>
-        <li>React</li>
-        <li>Angular</li>
+        <li v-for="technology in technologies">{{ technology.name }}</li>
       </ul>
     </div>
   </div>

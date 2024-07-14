@@ -1,31 +1,26 @@
 <script setup lang="ts">
-  import Image from 'primevue/image'
-  import Button from 'primevue/button'
-  import LinkButton from '@/components/Button/LinkButton'
-  import IconLink from '@/components/Image/IconLink'
-  import { ImageEnum } from '@/enums/image'
-  import type { Profile } from '@/types'
-  import { login } from '@/services/auth'
-  import { getProfile } from '@/services/profile'
+import Image from 'primevue/image'
+import Button from 'primevue/button'
+import LinkButton from '@/components/Button/LinkButton'
+import IconLink from '@/components/Image/IconLink'
+import { ImageEnum } from '@/enums/image'
+import type { Profile } from '@/types'
+import { login } from '@/services/auth'
+import { getIntroText } from '@/services/api'
 
-  let profile: Profile | null = null
-
-  const authData = await login()
-
-  if (authData?.token) {
-    profile = await getProfile(authData.token)
-  }
+const introDetails: Intro | null = await getIntroText()
 </script>
 
 <template>
-  <div v-if="profile" id="intro">
+  <div v-if="introDetails" id="intro">
     <Image id="intro-image" :src="ImageEnum.Intro" alt="Image" />
     <div>
-      <div id="intro-text-1">Hello, I'm Mesh</div>
-      <div id="intro-text-2">I'm a Software Developer with {{ profile.yearsExperience }} years experience</div>
+      <div id="intro-text-1">{{ introDetails.line1 }}</div>
+      <div id="intro-text-2">{{ introDetails.line2 }}</div>
       <div id="intro-buttons">
         <LinkButton url="/contact" label="Contact me" :isRounded="true" />
-        <LinkButton url="https://cv.meshu.app/pdfs/cv.pdf" label="Download CV" :isRounded="true" :isOutlined="true" :isNewTabLink="true" />
+        <LinkButton url="https://cv.meshu.app/pdfs/cv.pdf" label="Download CV" :isRounded="true" :isOutlined="true"
+          :isNewTabLink="true" />
         <IconLink icon="fa-brands fa-github" url="https://github.com/meshu-dev" />
         <IconLink icon="fa-brands fa-linkedin" url="https://www.linkedin.com/in/harmeshuppal" />
       </div>
@@ -67,10 +62,12 @@
   #intro {
     flex-direction: column;
   }
+
   #intro-text-1,
   #intro-text-2 {
     text-align: center;
   }
+
   #intro-buttons {
     justify-content: center;
   }

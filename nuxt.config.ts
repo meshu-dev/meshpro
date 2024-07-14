@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  target: 'static',
   build: {
     transpile: [
       '@fortawesome/fontawesome-svg-core',
@@ -8,7 +9,7 @@ export default defineNuxtConfig({
       '@fortawesome/vue-fontawesome'
     ]
   },
-  ssr: true,
+  ssr: false,
   devtools: { enabled: true },
   css: [
     'primevue/resources/themes/bootstrap4-dark-blue/theme.css',

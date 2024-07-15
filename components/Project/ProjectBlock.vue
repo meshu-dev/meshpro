@@ -1,22 +1,20 @@
 <script setup lang="ts">
-  import Card from 'primevue/card'
-  import Image from 'primevue/image'
-  import Tag from 'primevue/tag'
-  import LinkButton from '@/components/Button/LinkButton'
-  import GitRepoButton from '@/components/Button/GitRepoButton'
-  import type { Project } from '@/types'
+import Card from 'primevue/card'
+import Image from 'primevue/image'
+import Tag from 'primevue/tag'
+import LinkButton from '@/components/Button/LinkButton'
+import GitRepoButton from '@/components/Button/GitRepoButton'
+import type { Project } from '@/types'
 
-  type Props = {
-    project: Project | null,
-    hideType: boolean
-  }
+type Props = {
+  project: Project | null
+}
 
-  const props = withDefaults(defineProps<Props>(), {
-    project: null,
-    hideType: false
-  })
+const props = withDefaults(defineProps<Props>(), {
+  project: null
+})
 
-  const placeholderUrl: string = 'https://placehold.co/650x350'
+const placeholderUrl: string = 'https://placehold.co/650x350'
 </script>
 
 <template>
@@ -43,36 +41,44 @@
 .p-card img {
   border-radius: 6px;
 }
+
 .p-card {
   max-width: 650px;
 }
+
 .p-card::v-deep .p-card-title {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 .p-card::v-deep .p-card-content {
   display: flex;
   justify-content: space-between;
 }
+
 .p-card::v-deep .project-block-image {
   width: 650px;
 }
+
 .card-content-buttons {
   display: flex;
   gap: 8px;
 }
+
 .card-content-technologies {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .p-tag {
   background-color: #FFF;
   height: 25px;
 }
 
 @media (max-width: 1440px) {
+
   .p-card,
   .p-card::v-deep .project-block-image {
     max-width: 500px;
@@ -80,6 +86,7 @@
 }
 
 @media (max-width: 1200px) {
+
   .p-card,
   .p-card::v-deep .project-block-image {
     max-width: 650px;
@@ -87,6 +94,7 @@
 }
 
 @media (max-width: 775px) {
+
   .p-card,
   .p-card::v-deep .project-block-image {
     max-width: 500px;

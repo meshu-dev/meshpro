@@ -1,26 +1,22 @@
 <script setup lang="ts">
-  import ProjectBlock from '@/components/Project/ProjectBlock'
-  import type { Project } from '@/types'
+import ProjectBlock from '@/components/Project/ProjectBlock'
+import type { Project } from '@/types'
 
-  type Props = {
-    projects: Project[] | null,
-    hideType: boolean
-  }
+type Props = {
+  projects: Project[] | null
+}
 
-  const props = withDefaults(defineProps<Props>(), {
-    projects: null,
-    hideType: false
-  })
+const props = withDefaults(defineProps<Props>(), {
+  projects: null,
+  hideType: false
+})
 
-  console.log('props.projects', props.projects)
+console.log('props.projects', props.projects)
 </script>
 
 <template>
   <div id="project-list">
-    <ProjectBlock
-      v-for="project in props.projects"
-      :project="project"
-      :hideType="props.hideType" />
+    <ProjectBlock v-for="project in props.projects" :project="project" />
   </div>
 </template>
 

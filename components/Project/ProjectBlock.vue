@@ -5,6 +5,7 @@ import Tag from 'primevue/tag'
 import LinkButton from '@/components/Button/LinkButton'
 import GitRepoButton from '@/components/Button/GitRepoButton'
 import type { Project } from '@/types'
+import { ImageEnum } from '@/enums/image'
 
 type Props = {
   project: Project | null
@@ -13,14 +14,12 @@ type Props = {
 const props = withDefaults(defineProps<Props>(), {
   project: null
 })
-
-const placeholderUrl: string = 'https://placehold.co/650x350'
 </script>
 
 <template>
   <Card v-if="props.project">
     <template #header>
-      <Image imageClass="project-block-image" :src="props.project.imageUrl ?? placeholderUrl" alt="Image" />
+      <Image imageClass="project-block-image" :src="props.project.imageUrl ?? ImageEnum.Project" alt="Image" />
     </template>
     <template #title>
       {{ props.project.description }}

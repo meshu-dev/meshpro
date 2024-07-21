@@ -31,7 +31,7 @@ const placeholderUrl: string = 'https://placehold.co/650x350'
         <GitRepoButton :repositories="props.project.repositories" />
       </div>
       <div class="card-content-technologies">
-        <Tag v-for="technology of props.project.technologies" :value="technology.name" />
+        <Tag v-for="technology of props.project.technologies" :value="technology" />
       </div>
     </template>
   </Card>

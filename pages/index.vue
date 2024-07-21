@@ -19,7 +19,7 @@ const introDetails: Intro | null = await getIntroText()
       <div id="intro-text-2">{{ introDetails.line2 }}</div>
       <div id="intro-buttons">
         <LinkButton url="/contact" label="Contact me" :isRounded="true" />
-        <LinkButton url="https://cv.meshu.app/pdfs/cv.pdf" label="Download CV" :isRounded="true" :isOutlined="true"
+        <LinkButton url="https://cv.meshpro.io" label="View CV" :isRounded="true" :isOutlined="true"
           :isNewTabLink="true" />
         <IconLink icon="fa-brands fa-github" url="https://github.com/meshu-dev" />
         <IconLink icon="fa-brands fa-linkedin" url="https://www.linkedin.com/in/harmeshuppal" />

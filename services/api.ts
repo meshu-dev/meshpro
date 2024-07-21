@@ -1,5 +1,5 @@
 import { toRaw } from 'vue'
-import type { About, ApiResponse, Intro, Profile, Project } from '@/types'
+import type { About, ApiResponse, Intro, Project } from '@/types'
 import { getPortfolioApiUrl, getAuthHeader } from '@/utils/api'
 
 const meshApiUrl: string = process.env.MESH_API_URL || 'http://localhost:8000/api'
@@ -15,13 +15,10 @@ export const getIntroText = async (token: string): Promise<Intro> => {
       }
     )
   )
-
   const apiData: ApiResponse = toRaw(data.value) as ApiResponse
-  console.log('apiData.data', apiData)
-
   return {
-    line1: apiData.data['portfolio_intro_1'],
-    line2: apiData.data['portfolio_intro_2']
+    line1: apiData.data['line1'],
+    line2: apiData.data['line2']
   } as Intro
 }
 
@@ -36,9 +33,6 @@ export const getAboutData = async (token: string): Promise<About> => {
       }
     )
   )
-
-  console.log('apiData.data', data);
-
   const apiData: ApiResponse = toRaw(data.value) as ApiResponse
   return apiData.data as About
 }
@@ -54,10 +48,6 @@ export const getProjects = async (token: string): Promise<Project[]> => {
       }
     )
   )
-
   const apiData: ApiResponse = toRaw(data.value) as ApiResponse
-
-  console.log('apiData', apiData);
-
-  return apiData.data as Project[]
+  return apiData.data.projects as Project[]
 }

@@ -15,7 +15,7 @@ const technologies: Technology[] = aboutData?.skills[0].technologies || []
       <div v-html="aboutData.text" />
       <h2>Skills</h2>
       <ul>
-        <li v-for="technology in technologies">{{ technology.name }}</li>
+        <li v-for="technology in technologies">{{ technology }}</li>
       </ul>
     </div>
   </div>

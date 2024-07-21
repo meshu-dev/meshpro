@@ -7,8 +7,8 @@
     <div id="footer-content">
       <span id="footer-copyright">Copyright &copy; Mesh. All rights reserved</span>
       <div>
-        <span>Built with&nbsp;</span>
-        <ImageLink imgUrl="/img/nuxt-logo.svg" imgText="Nuxt Logo" url="https://nuxt.com" :width="80" />
+        <span>Built with Laravel &amp; Nuxt.js</span>
+        <!-- <ImageLink imgUrl="/img/nuxt-logo.svg" imgText="Nuxt Logo" url="https://nuxt.com" :width="80" /> -->
       </div>
     </div>
   </footer>

@@ -4,10 +4,7 @@ import { getProjects } from '@/services/api'
 import type { Project } from '~/types'
 
 const projects: Ref<Project[] | null> = ref(null)
-
-onMounted(async () => {
-  projects.value = await getProjects()
-})
+projects.value = await getProjects()
 </script>
 
 <template>

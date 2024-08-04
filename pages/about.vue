@@ -5,10 +5,7 @@ import { getAboutData } from '@/services/api'
 import type { About } from '~/types';
 
 const aboutData: Ref<About | null> = ref(null)
-
-onMounted(async () => {
-  aboutData.value = await getAboutData()
-})
+aboutData.value = await getAboutData()
 </script>
 
 <template>

@@ -7,10 +7,7 @@ import { getIntroText } from '@/services/api'
 import type { Intro } from '~/types'
 
 const introDetails: Ref<Intro | null> = ref(null)
-
-onMounted(async () => {
-  introDetails.value = await getIntroText()
-})
+introDetails.value = await getIntroText()
 </script>
 
 <template>

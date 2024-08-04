@@ -15,7 +15,6 @@ export const getIntroText = async (token: string = ''): Promise<Intro> => {
     () => $fetch(
       `${apiUrl}/portfolio/intro`,
       {
-        server: false,
         method: "GET"
       }
     )

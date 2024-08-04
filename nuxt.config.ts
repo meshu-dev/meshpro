@@ -29,6 +29,11 @@ export default defineNuxtConfig({
       meshproApiUrl: process.env.MESH_API_URL
     }
   },
+  nitro: {
+    prerender: {
+      routes: ['/', '/about', '/portfolio', '/contact']
+    }
+  },
   plugins: [
     '~/plugins/font-awesome'
   ],

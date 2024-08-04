@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import ProjectBlock from '@/components/Project/ProjectBlock'
+import ProjectBlock from '@/components/Project/ProjectBlock.vue'
 import { getProjects } from '@/services/api'
-import type { Project } from '@/types'
+import type { Project } from '~/types'
 
-let projects: Projects[] | null = await getProjects()
+const projects: Ref<Project[] | null> = ref(null)
+
+onMounted(async () => {
+  projects.value = await getProjects()
+})
 </script>
 
 <template>

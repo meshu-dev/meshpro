@@ -2,20 +2,24 @@
 import Image from 'primevue/image'
 import { ImageEnum } from '@/enums/image'
 import { getAboutData } from '@/services/api'
+import type { About } from '~/types';
 
-const aboutData: About | null = await getAboutData()
-const technologies: Technology[] = aboutData?.skills[0].technologies || []
+const aboutData: Ref<About | null> = ref(null)
+
+onMounted(async () => {
+  aboutData.value = await getAboutData()
+})
 </script>
 
 <template>
   <div v-if="aboutData" id="about">
-    <Image id="intro-image" :src="aboutData.imageUrl || ImageEnum.About" alt="Image" />
+    <Image id="intro-image" :src="aboutData.image || ImageEnum.About" alt="Image" />
     <div>
       <h1>About Me</h1>
       <div v-html="aboutData.text" />
       <h2>Skills</h2>
-      <ul>
-        <li v-for="technology in technologies">{{ technology }}</li>
+      <ul v-if="aboutData.skills[0]">
+        <li v-for="technology in aboutData.skills[0].technologies">{{ technology }}</li>
       </ul>
     </div>
   </div>

@@ -5,7 +5,7 @@
   import Button from 'primevue/button'
   import { ref, type Ref } from 'vue'
   import { useChallengeV3 } from 'vue-recaptcha'
-  import type { ContactMessage, StatusMsg } from '@/types'
+  import type { ContactMessage, StatusMsg } from '~/types'
   import { sendMessage } from '@/services/contact'
   import { getBlankContactMessage, hasFields, resetForm } from '@/utils/contact'
 

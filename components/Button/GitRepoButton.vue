@@ -3,7 +3,7 @@
   import Menu from 'primevue/menu'
   import Button from 'primevue/button'
   import LinkButton from '@/components/Button/LinkButton'
-  import type { GitRepository, GitRepositoryRef } from '@/types'
+  import type { GitRepository, GitRepositoryRef } from '~/types/types'
 
   type Props = {
     repositories: GitRepository[] | null

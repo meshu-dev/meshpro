@@ -24,9 +24,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       recaptcha: {
-        v3SiteKey: process.env.GOOGLE_RECAPTCHA_KEY
+        v3SiteKey: process.env.NUXT_PUBLIC_API_BASE
       },
-      mailerUrl: process.env.MAILER_URL
+      meshproApiUrl: process.env.NUXT_PUBLIC_MESH_API_URL
     }
   },
   plugins: [

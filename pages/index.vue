@@ -1,19 +1,21 @@
 <script setup lang="ts">
 import Image from 'primevue/image'
-import Button from 'primevue/button'
-import LinkButton from '@/components/Button/LinkButton'
-import IconLink from '@/components/Image/IconLink'
+import LinkButton from '@/components/Button/LinkButton.vue'
+import IconLink from '@/components/Image/IconLink.vue'
 import { ImageEnum } from '@/enums/image'
-import type { Profile } from '@/types'
-import { login } from '@/services/auth'
 import { getIntroText } from '@/services/api'
+import type { Intro } from '~/types'
 
-const introDetails: Intro | null = await getIntroText()
+const introDetails: Ref<Intro | null> = ref(null)
+
+onMounted(async () => {
+  introDetails.value = await getIntroText()
+})
 </script>
 
 <template>
   <div v-if="introDetails" id="intro">
-    <Image id="intro-image" :src="introDetails.imageUrl || ImageEnum.Intro" alt="Image" />
+    <Image id="intro-image" :src="introDetails.image || ImageEnum.Intro" alt="Image" />
     <div>
       <div id="intro-text-1">{{ introDetails.line1 }}</div>
       <div id="intro-text-2">{{ introDetails.line2 }}</div>
@@ -21,8 +23,7 @@ const introDetails: Intro | null = await getIntroText()
         <LinkButton url="/contact" label="Contact me" :isRounded="true" />
         <LinkButton url="https://cv.meshpro.io" label="View CV" :isRounded="true" :isOutlined="true"
           :isNewTabLink="true" />
-        <IconLink icon="fa-brands fa-github" url="https://github.com/meshu-dev" />
-        <IconLink icon="fa-brands fa-linkedin" url="https://www.linkedin.com/in/harmeshuppal" />
+        <IconLink v-for="site of introDetails.sites" :site="site" />
       </div>
     </div>
   </div>

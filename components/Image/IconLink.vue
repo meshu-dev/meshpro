@@ -1,17 +1,17 @@
 <script setup lang="ts">
-  type Props = {
-    icon: string
-    url: string
-  }
+import type { IntroSite } from '~/types';
 
-  const props = withDefaults(defineProps<Props>(), {
-    icon: '',
-    url: ''
-  })
+type Props = {
+  site: IntroSite | null
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  site: null
+})
 </script>
 
 <template>
-  <NuxtLink :to="props.url" target="_blank">
-    <font-awesome-icon :icon="props.icon" size="2xl" />
+  <NuxtLink v-if="props.site" :to="props.site.url" target="_blank">
+    <Image :src="props.site.image" :alt="props.site.name" />
   </NuxtLink>
 </template>

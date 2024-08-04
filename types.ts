@@ -41,6 +41,30 @@ export interface Type {
   name: string
 }
 
+export type GitRepository = {
+  name: string,
+  url: string
+}
+
+export type Intro = {
+  image: string,
+  line1: string,
+  line2: string,
+  sites: IntroSite[]
+}
+
+export type IntroSite = {
+  name: string,
+  url: string,
+  image: string
+}
+
+export type About = {
+  image: string,
+  text: string,
+  skills: Skill[]
+}
+
 export type Skill = {
   name: string,
   technologies: Technology[]
@@ -50,27 +74,11 @@ export type Technology = {
   name: string
 }
 
-export type GitRepository = {
-  name: string,
-  url: string
-}
-
-export type Intro = {
-  imageUrl: string,
-  line1: string,
-  line2: string
-}
-
-export type About = {
-  imageUrl: string,
-  text: string,
-  skills: Skill[]
-}
-
 export type Project = {
   name: string,
   description: string,
   url: string,
+  image: string,
   repositories: GitRepository[],
   technologies: Technology[]
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import LinkButton from '@/components/Button/LinkButton'
-  import type { Type } from '@/types'
+  import LinkButton from '@/components/Button/LinkButton.vue'
+  import type { Type } from '~/types'
 
   type Props = {
     types: Type[] | null

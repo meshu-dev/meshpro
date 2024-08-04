@@ -1,5 +1,5 @@
 import { toRaw } from 'vue'
-import type { ApiResponse, ContactMessage } from '@/types'
+import type { ApiResponse, ContactMessage } from '~/types'
 import { getMailerUrl } from '@/utils/api'
 
 export const sendMessage = async (contactMessage: ContactMessage): Promise<any> => {

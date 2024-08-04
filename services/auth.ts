@@ -1,5 +1,5 @@
 import { toRaw } from 'vue'
-import type { Auth } from '@/types'
+import type { Auth } from '~/types'
 import { getPortfolioApiUrl, getLoginDetails } from '@/utils/api'
 
 export const login = async (): Promise<any> => {

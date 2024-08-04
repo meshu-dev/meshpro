@@ -2,9 +2,9 @@
 import Card from 'primevue/card'
 import Image from 'primevue/image'
 import Tag from 'primevue/tag'
-import LinkButton from '@/components/Button/LinkButton'
-import GitRepoButton from '@/components/Button/GitRepoButton'
-import type { Project } from '@/types'
+import LinkButton from '@/components/Button/LinkButton.vue'
+import GitRepoButton from '@/components/Button/GitRepoButton.vue'
+import type { Project } from '~/types'
 import { ImageEnum } from '@/enums/image'
 
 type Props = {
@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
   <Card v-if="props.project">
     <template #header>
-      <Image imageClass="project-block-image" :src="props.project.imageUrl ?? ImageEnum.Project" alt="Image" />
+      <Image imageClass="project-block-image" :src="props.project.image ?? ImageEnum.Project" alt="Image" />
     </template>
     <template #title>
       {{ props.project.description }}

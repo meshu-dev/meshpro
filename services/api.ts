@@ -13,7 +13,7 @@ export const getIntroText = async (token: string = ''): Promise<Intro> => {
   const { data } = await useAsyncData(
     'intro',
     () => $fetch(
-      `${apiUrl}/portfolio/intro`,
+      `https://api.meshpro.io//portfolio/intro`,
       {
         method: "GET"
       }

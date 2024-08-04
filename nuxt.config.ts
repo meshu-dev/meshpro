@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       '@fortawesome/vue-fontawesome'
     ]
   },
-  ssr: false,
+  ssr: true,
   devtools: { enabled: true },
   css: [
     'primevue/resources/themes/bootstrap4-dark-blue/theme.css',

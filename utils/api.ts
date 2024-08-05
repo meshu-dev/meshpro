@@ -11,16 +11,8 @@ export const getPortfolioApiUrl = (path: string): string => {
   return String(`${process.env.API_URL}/${path}`)
 }
 
-export const getMailerUrl = (): string => {
-  const runtimeConfig = useRuntimeConfig()
-  return runtimeConfig.public.mailerUrl
-
-  //console.log('runtimeConfig', runtimeConfig, runtimeConfig.public.mailerUrl)
-  //return String(`${process.env.NUXT_PUBLIC_MAILER_URL}/${path}`)
-}
-
 export const getLoginDetails = (): LoginDetails => {
-  const apiEmail: string    = String(process.env.API_EMAIL)
+  const apiEmail: string = String(process.env.API_EMAIL)
   const apiPassword: string = String(process.env.API_PASSWORD)
 
   console.log('getLoginDetails', {

@@ -6,8 +6,9 @@ import { ImageEnum } from '@/enums/image'
 import { getIntroText } from '@/services/api'
 import type { Intro } from '~/types'
 
-const introDetails: Ref<Intro | null> = ref(null)
-introDetails.value = await getIntroText()
+const introDetails: Ref<Intro | null> = ref(
+  await getIntroText() || null
+)
 </script>
 
 <template>

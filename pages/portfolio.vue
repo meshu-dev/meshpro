@@ -3,8 +3,9 @@ import ProjectBlock from '@/components/Project/ProjectBlock.vue'
 import { getProjects } from '@/services/api'
 import type { Project } from '~/types'
 
-const projects: Ref<Project[] | null> = ref(null)
-projects.value = await getProjects()
+const projects: Ref<Project[] | null> = ref(
+  await getProjects() || null
+)
 </script>
 
 <template>

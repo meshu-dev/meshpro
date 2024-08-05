@@ -25,48 +25,58 @@ export type ApiResponse = {
   }
 }
 
+export type ApiValidationError = {
+  errors: any
+  message: string
+}
+
+export type ContactMessageResponse = {
+  success: boolean
+  message: string
+}
+
 export interface User {
-  id: number,
-  name: string,
+  id: number
+  name: string
   email: string
 }
 
 export type Auth = {
-  token: string,
+  token: string
   user: User
 }
 
 export interface Type {
-  id: number,
+  id: number
   name: string
 }
 
 export type GitRepository = {
-  name: string,
+  name: string
   url: string
 }
 
 export type Intro = {
-  image: string,
-  line1: string,
-  line2: string,
+  image: string
+  line1: string
+  line2: string
   sites: IntroSite[]
 }
 
 export type IntroSite = {
-  name: string,
-  url: string,
+  name: string
+  url: string
   image: string
 }
 
 export type About = {
-  image: string,
-  text: string,
+  image: string
+  text: string
   skills: Skill[]
 }
 
 export type Skill = {
-  name: string,
+  name: string
   technologies: Technology[]
 }
 
@@ -75,10 +85,10 @@ export type Technology = {
 }
 
 export type Project = {
-  name: string,
-  description: string,
-  url: string,
-  image: string,
-  repositories: GitRepository[],
+  name: string
+  description: string
+  url: string
+  image: string
+  repositories: GitRepository[]
   technologies: Technology[]
 }

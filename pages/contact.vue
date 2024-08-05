@@ -5,8 +5,8 @@
   import Button from 'primevue/button'
   import { ref, type Ref } from 'vue'
   import { useChallengeV3 } from 'vue-recaptcha'
-  import type { ContactMessage, StatusMsg } from '~/types'
-  import { sendMessage } from '@/services/contact'
+  import type { ContactMessage, StatusMsg, ApiValidationError, ContactMessageResponse } from '~/types'
+  import { sendMessage } from '@/services/api'
   import { getBlankContactMessage, hasFields, resetForm } from '@/utils/contact'
 
   const statusMsg: Ref<StatusMsg | null> = ref(null)
@@ -15,14 +15,21 @@
 
   const sendContactMsg = async () => {
     if (hasFields(contactMsg)) {
-      const response = await sendMessage(contactMsg.value)
+      const response: ContactMessageResponse | null = await sendMessage(toRaw(contactMsg.value))
+      
+      if (response?.success) {
+        resetForm(contactMsg)
+      }
 
-      console.log('onSubmit - response', response)
-
-      resetForm(contactMsg)
-      statusMsg.value = { type: 'success', text: 'Message has been sent' } as StatusMsg
+      statusMsg.value = {
+        type: response?.success ? 'success' : 'error',
+        text: response?.message
+      } as StatusMsg
     } else {
-      statusMsg.value = { type: 'error', text: 'All fields are required' } as StatusMsg
+      statusMsg.value = {
+        type: 'error',
+        text: 'All fields are required'
+      } as StatusMsg
     }
   }
 

@@ -2,10 +2,11 @@
 import Image from 'primevue/image'
 import { ImageEnum } from '@/enums/image'
 import { getAboutData } from '@/services/api'
-import type { About } from '~/types';
+import type { About } from '~/types'
 
-const aboutData: Ref<About | null> = ref(null)
-aboutData.value = await getAboutData()
+const aboutData: Ref<About | null> = ref(
+  await getAboutData() || null
+)
 </script>
 
 <template>

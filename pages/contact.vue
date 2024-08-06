@@ -47,6 +47,7 @@
     } else {
       statusMsg.value = { type: 'error', text: 'An error occurred validating submission. Please try again later.' } as StatusMsg
     }
+    return
   }
 </script>
 

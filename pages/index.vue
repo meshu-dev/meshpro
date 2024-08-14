@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import Image from 'primevue/image'
 import LinkButton from '@/components/Button/LinkButton.vue'
 import IconLink from '@/components/Image/IconLink.vue'
-import { ImageEnum } from '@/enums/image'
 import { getIntroText } from '@/services/api'
 import type { Intro } from '~/types'
 
@@ -13,7 +11,6 @@ const introDetails: Ref<Intro | null> = ref(
 
 <template>
   <div v-if="introDetails" id="intro">
-    <Image id="intro-image" :src="introDetails.image || ImageEnum.Intro" alt="Image" />
     <div>
       <div id="intro-text-1">{{ introDetails.line1 }}</div>
       <div id="intro-text-2">{{ introDetails.line2 }}</div>

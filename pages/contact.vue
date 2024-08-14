@@ -39,7 +39,6 @@
     }
 
     const token: string = await execute()
-    console.log('Google ReCaptcha - execute', token)
 
     if (token) {
       contactMsg.value.token = token

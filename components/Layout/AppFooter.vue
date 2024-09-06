@@ -24,7 +24,7 @@ footer {
 #footer-content {
   display: flex;
   justify-content: space-between;
-  margin: 50px auto 0;
+  margin: 0 auto 0;
   padding: 0 40px;
   max-width: 1440px;
 }

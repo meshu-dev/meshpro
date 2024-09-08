@@ -23,7 +23,10 @@ footer {
 
 #footer-content {
   display: flex;
+  flex-direction: row;
+  align-items: baseline;
   justify-content: space-between;
+  gap: 0;
   margin: 0 auto 0;
   padding: 0 40px;
   max-width: 1440px;
@@ -37,6 +40,12 @@ footer {
   .p-card,
   .p-card::v-deep .project-block-image {
     max-width: 500px;
+  }
+
+  #footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 }
 </style>

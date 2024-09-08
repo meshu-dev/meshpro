@@ -17,6 +17,7 @@
 <style scoped>
 header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 20px 0 100px;
@@ -30,6 +31,14 @@ header nav {
 
 #logo {
   font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 775px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 }
 </style>
 

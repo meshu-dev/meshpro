@@ -1,15 +1,11 @@
 import { toRaw } from 'vue'
-import type { About, ApiResponse, ApiValidationError, ContactMessage, ContactMessageResponse, Intro, IntroSite, Project } from '~/types'
-
-const getApiUrl = (): string => {
-  const runtimeConfig = useRuntimeConfig()
-  const meshproApiUrl: string = toRaw(runtimeConfig.public.meshproApiUrl)
-
-  return meshproApiUrl
-}
+import { ConfigEnum } from '~/enums/config'
+import type { About, ApiResponse, ApiValidationError, BlogPost, ContactMessage, ContactMessageResponse, Intro, IntroSite, Project } from '~/types'
+import dayjs from 'dayjs'
+import { getPortfolioApiUrl, getHyperApiUrl } from '~/utils/common'
 
 export const getIntroText = async (token: string = ''): Promise<Intro> => {
-  const apiUrl: string = getApiUrl()
+  const apiUrl: string = getPortfolioApiUrl()
   const { data } = await useAsyncData(
     'intro',
     () => $fetch(
@@ -29,7 +25,7 @@ export const getIntroText = async (token: string = ''): Promise<Intro> => {
 }
 
 export const getAboutData = async (token: string = ''): Promise<About> => {
-  const apiUrl: string = getApiUrl()
+  const apiUrl: string = getPortfolioApiUrl()
   const { data, pending, error, refresh } = await useAsyncData(
     'about',
     () => $fetch(
@@ -44,7 +40,7 @@ export const getAboutData = async (token: string = ''): Promise<About> => {
 }
 
 export const getProjects = async (token: string = ''): Promise<Project[]> => {
-  const apiUrl: string = getApiUrl()
+  const apiUrl: string = getPortfolioApiUrl()
   const { data } = await useAsyncData(
     'projects',
     () => $fetch(
@@ -58,8 +54,35 @@ export const getProjects = async (token: string = ''): Promise<Project[]> => {
   return apiData.data.projects as Project[]
 }
 
+export const getBlogPosts = async (): Promise<BlogPost[]> => {
+  const apiUrl: string = getHyperApiUrl()
+  const { data } = await useAsyncData(
+    'blogPosts',
+    () => $fetch(
+      `${apiUrl}/blogs/latest`,
+      {
+        method: "GET"
+      }
+    )
+  )
+  const apiData: any[] = toRaw(data.value) as any[]
+  let blogPosts: BlogPost[] = []
+
+  for (const apiDataRow of apiData) {
+    blogPosts.push({
+      title: apiDataRow['title'],
+      slug: apiDataRow['slug'],
+      tags: apiDataRow['tags'],
+      published_at: apiDataRow['published_at'],
+      created_at: apiDataRow['created_at'],
+      updated_at: apiDataRow['updated_at']
+    })
+  }
+  return blogPosts
+}
+
 export const sendMessage = async (contactMessage: ContactMessage): Promise<ContactMessageResponse | null> => {
-  const apiUrl: string = getApiUrl()
+  const apiUrl: string = getPortfolioApiUrl()
   let contactMessageResponse: ContactMessageResponse | null = null
 
   await useFetch(

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import Image from 'primevue/image'
-import { ImageEnum } from '@/enums/image'
 import { getAboutData } from '@/services/api'
-import type { About } from '~/types'
+import type { About } from '@/types'
+import { ImageEnum } from '@/enums/image';
 
 const aboutData: Ref<About | null> = ref(
   await getAboutData() || null
@@ -10,42 +10,15 @@ const aboutData: Ref<About | null> = ref(
 </script>
 
 <template>
-  <div v-if="aboutData" id="about">
-    <Image id="intro-image" :src="aboutData.image || ImageEnum.About" alt="Image" />
+  <div v-if="aboutData" class="flex gap-28 max-lg:flex-col max-lg:gap-10">
+    <Image :src="aboutData.image || ImageEnum.About" width="1280" alt="Image" />
     <div>
       <h1>About Me</h1>
       <div v-html="aboutData.text" />
       <h2>Skills</h2>
-      <ul v-if="aboutData.skills[0]">
-        <li v-for="technology in aboutData.skills[0].technologies">{{ technology }}</li>
+      <ul v-if="aboutData.skills[0]" class="bullet-point-list">
+        <li v-for="technology in aboutData.skills[0].technologies" class="bullet-point-item">{{ technology }}</li>
       </ul>
     </div>
   </div>
 </template>
-
-<style scoped>
-#about {
-  display: flex;
-  gap: 100px;
-}
-
-.p-image {
-  display: flex;
-  justify-content: center;
-}
-
-h2 {
-  margin-top: 40px;
-}
-
-li {
-  margin-bottom: 8px;
-}
-
-@media (max-width: 1075px) {
-  #about {
-    flex-direction: column;
-    gap: 40px;
-  }
-}
-</style>

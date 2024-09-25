@@ -3,7 +3,7 @@
   import Menu from 'primevue/menu'
   import Button from 'primevue/button'
   import LinkButton from '@/components/Button/LinkButton'
-  import type { GitRepository, GitRepositoryRef } from '~/types/types'
+  import type { GitRepository, GitRepositoryRef } from '@/types/types'
 
   type Props = {
     repositories: GitRepository[] | null
@@ -32,10 +32,10 @@
 <template>
   <template v-if="repositories.length > 1">
     <Button type="button" @click="toggle" aria-haspopup="true" aria-controls="overlay_menu" label="Github" rounded />
-    <Menu ref="menu" id="overlay_menu" :model="items" :popup="true">
+    <Menu ref="menu" id="overlay_menu" :model="items" :popup="true" class="bg-gray-800 border border-slate-500 border-1 rounded-md mt-[1px] ml-1" :unstyled="true">
       <template #item="{ item }">
-        <NuxtLink :to="item.url" target="_blank">
-          <span class="p-button p-component p-button-link">{{ item.label }}</span>
+        <NuxtLink :to="item.url" target="_blank" class="block px-2 py-3 rounded hover:bg-slate-700 hover:bg-opacity-50">
+          <span class="text-sky-600">{{ item.label }}</span>
         </NuxtLink>
       </template>
     </Menu>

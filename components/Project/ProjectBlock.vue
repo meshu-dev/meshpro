@@ -4,7 +4,7 @@ import Image from 'primevue/image'
 import Tag from 'primevue/tag'
 import LinkButton from '@/components/Button/LinkButton.vue'
 import GitRepoButton from '@/components/Button/GitRepoButton.vue'
-import type { Project } from '~/types'
+import type { Project } from '@/types'
 import { ImageEnum } from '@/enums/image'
 
 type Props = {
@@ -17,86 +17,23 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <Card v-if="props.project">
+  <Card v-if="props.project" class="max-w-[640px] rounded rounded-b-xl max-[1440px]:max-w-[500px] max-[1200px]:max-w-[650px] max-[775px]:max-w-[500px]">
     <template #header>
-      <Image imageClass="project-block-image" :src="props.project.image ?? ImageEnum.Project" alt="Image" />
+      <Image imageClass="w-[650px] rounded rounded-t-xl" :src="props.project.image ?? ImageEnum.Project" alt="Image" />
     </template>
     <template #title>
       {{ props.project.description }}
     </template>
     <template #content>
-      <div class="card-content-buttons">
-        <LinkButton :url="props.project.url" label="View" :isRounded="true" :isNewTabLink="true" />
-        <GitRepoButton :repositories="props.project.repositories" />
-      </div>
-      <div class="card-content-technologies">
-        <Tag v-for="technology of props.project.technologies" :value="technology" />
+      <div class="w-full flex justify-between max-sm:flex-col max-sm:gap-8">
+        <div class="flex gap-2">
+          <LinkButton :url="props.project.url" label="View" :isRounded="true" :isNewTabLink="true" />
+          <GitRepoButton :repositories="props.project.repositories" />
+        </div>
+        <div class="flex items-center gap-3">
+          <Tag v-for="technology of props.project.technologies" :value="technology" class="bg-white h-6 text-xl font-normal px-2 py-4" />
+        </div>
       </div>
     </template>
   </Card>
 </template>
-
-<style scoped>
-.p-card img {
-  border-radius: 6px;
-}
-
-.p-card {
-  max-width: 650px;
-}
-
-.p-card::v-deep .p-card-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.p-card::v-deep .p-card-content {
-  display: flex;
-  justify-content: space-between;
-}
-
-.p-card::v-deep .project-block-image {
-  width: 650px;
-}
-
-.card-content-buttons {
-  display: flex;
-  gap: 8px;
-}
-
-.card-content-technologies {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.p-tag {
-  background-color: #FFF;
-  height: 25px;
-}
-
-@media (max-width: 1440px) {
-
-  .p-card,
-  .p-card::v-deep .project-block-image {
-    max-width: 500px;
-  }
-}
-
-@media (max-width: 1200px) {
-
-  .p-card,
-  .p-card::v-deep .project-block-image {
-    max-width: 650px;
-  }
-}
-
-@media (max-width: 775px) {
-
-  .p-card,
-  .p-card::v-deep .project-block-image {
-    max-width: 500px;
-  }
-}
-</style>

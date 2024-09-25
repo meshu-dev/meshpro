@@ -1,51 +1,10 @@
-<script setup lang="ts">
-  import ImageLink from '@/components/Image/ImageLink'
-</script>
-
 <template>
-  <footer>
-    <div id="footer-content">
-      <span id="footer-copyright">Copyright &copy; Mesh Pro. All rights reserved</span>
+  <footer class="py-12 text-xl border-t border-solid border-neutral-600">
+    <div id="footer-content" class="flex flex-row items-baseline justify-between gap-0 mx-auto px-10 max-w-[1440px] max-md:flex-col max-md:items-center max-md:gap-5">
+      <span id="footer-copyright" class="pt-1">Copyright &copy; Mesh Pro. All rights reserved</span>
       <div>
         <span>Built with Laravel &amp; Nuxt.js</span>
-        <!-- <ImageLink imgUrl="/img/nuxt-logo.svg" imgText="Nuxt Logo" url="https://nuxt.com" :width="80" /> -->
       </div>
     </div>
   </footer>
 </template>
-
-<style scoped>
-footer {
-  border-top: 1px solid rgb(71 85 105);
-  padding: 50px 0;
-  font-size: 18px;
-}
-
-#footer-content {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 0;
-  margin: 0 auto 0;
-  padding: 0 40px;
-  max-width: 1440px;
-}
-
-#footer-copyright {
-  padding-top: 3px;
-}
-
-@media (max-width: 775px) {
-  .p-card,
-  .p-card::v-deep .project-block-image {
-    max-width: 500px;
-  }
-
-  #footer-content {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-}
-</style>

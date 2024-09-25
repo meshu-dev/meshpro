@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply text-4xl font-extrabold mb-10;
+    }
+
+    h2 {
+        @apply text-3xl font-semibold mb-6;
+    }
+
+    p {
+        @apply mb-6;
+    }
+
+    input,
+    textarea {
+        @apply rounded px-2 py-1 outline outline-1 outline-gray-500;
+    }
+
+    button {
+        @apply px-3 py-2 bg-sky-600 border-sky-600 border border-solid text-black font-normal rounded-full;
+    }
+}
+
+@layer components {
+    .bullet-point-list {
+        @apply list-disc ml-6 mb-6 pl-4;
+    }
+
+    .bullet-point-item {
+        @apply mb-2;
+    }
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}

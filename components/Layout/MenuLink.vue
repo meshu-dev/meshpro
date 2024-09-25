@@ -12,12 +12,6 @@
 
 <template>
   <NuxtLink v-if="label && url" :to="url">
-    <span class="p-button p-component p-button-link">{{ label }}</span>
+    <span class="px-3 py-2 text-2xl text-sky-600">{{ label }}</span>
   </NuxtLink>
 </template>
-
-<style scoped>
-.p-button {
-  font-size: 25px;
-}
-</style>

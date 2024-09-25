@@ -4,41 +4,13 @@
 </script>
 
 <template>
-  <header>
-    <Logo />
-    <nav>
+  <header class="flex flex-row justify-between items-center mt-5 mb-24 text-2xl max-md:flex-col max-md:items-center max-md:gap-5">
+    <Logo class="font-sans" />
+    <nav class="flex gap-5">
       <MenuLink label="About" url="/about" />
       <MenuLink label="Portfolio" url="/portfolio" />
+      <MenuLink label="Blog" url="/blog" />
       <MenuLink label="Contact" url="/contact" />
     </nav>
   </header>
 </template>
-
-<style scoped>
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 20px 0 100px;
-  font-size: 25px;
-}
-
-header nav {
-  display: flex;
-  gap: 20px;
-}
-
-#logo {
-  font-family: 'Roboto', sans-serif;
-}
-
-@media (max-width: 775px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-}
-</style>
-

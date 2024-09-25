@@ -22,14 +22,8 @@
   <NuxtLink
     v-if="props.url"
     :to="props.url"
-    :class="`p-button font-bold ${isRounded ? 'p-button-rounded' : ''} ${isOutlined ? 'p-button-outlined' : ''} ${isDisabled ? 'p-disabled' : ''}`"
+    :class="`px-3 py-2 bg-sky-600 border-sky-600 border border-solid text-black font-normal ${isRounded ? 'rounded-full' : ''} ${isOutlined ? 'bg-transparent text-sky-600' : ''} ${isDisabled ? 'disabled' : ''}`"
     :target="isNewTabLink ? '_blank' : '_self'">
     {{ props.label }}
   </NuxtLink>
 </template>
-
-<style scoped>
-  a.p-button.p-button-outlined {
-    color: #8dd0ff;
-  }
-</style>

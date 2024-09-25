@@ -13,20 +13,21 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
     'primevue/resources/themes/bootstrap4-dark-blue/theme.css',
-    //'primevue/resources/themes/saga-blue/theme.css',
-    '~/assets/css/main.css'
   ],
   modules: [
     '@nuxtjs/google-fonts',
     'nuxt-primevue',
-    'vue-recaptcha/nuxt'
+    'vue-recaptcha/nuxt',
+    '@nuxtjs/tailwindcss'
   ],
   runtimeConfig: {
     public: {
       recaptcha: {
         v3SiteKey: process.env.GOOGLE_RECAPTCHA_KEY
       },
-      meshproApiUrl: process.env.MESH_API_URL
+      portfolioApiUrl: process.env.PORTFOLIO_API_URL,
+      hyperApiUrl: process.env.HYPER_API_URL,
+      blogUrl: process.env.BLOG_URL
     }
   },
   nitro: {
@@ -41,6 +42,15 @@ export default defineNuxtConfig({
     families: {
       Roboto: true,
       "Bebas Neue": true
+    }
+  },
+  tailwindcss: {
+    config: {
+      theme: {
+        fontFamily: {
+          sans: ['Bebas Neue', 'sans-serif'],
+        }
+      }
     }
   }
 })

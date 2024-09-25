@@ -9,23 +9,7 @@ const projects: Ref<Project[] | null> = ref(
 </script>
 
 <template>
-  <div id="project-list">
+  <div class="flex flex-wrap justify-between mt-10 gap-x-16 max-xl:justify-around max-xl:gap-y-16">
     <ProjectBlock v-for="project in projects" :project="project" />
   </div>
 </template>
-
-<style scoped>
-#project-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 40px;
-  row-gap: 60px;
-}
-
-@media (max-width: 1440px) {
-  #project-list {
-    justify-content: space-around;
-  }
-}
-</style>

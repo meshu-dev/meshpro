@@ -4,7 +4,7 @@ import AppFooter from '@/components/Layout/AppFooter';
 </script>
 
 <template>
-  <div id="main">
+  <div class="w-[1440px] min-h-[70vh] mx-auto mb-10 p-10 max-[1440px]:w-full">
     <AppHeader />
     <slot />
   </div>

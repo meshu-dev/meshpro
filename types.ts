@@ -92,3 +92,12 @@ export type Project = {
   repositories: GitRepository[]
   technologies: Technology[]
 }
+
+export type BlogPost = {
+  title: string
+  slug: string
+  tags: string[]
+  published_at: Date
+  created_at: Date
+  updated_at: Date
+}

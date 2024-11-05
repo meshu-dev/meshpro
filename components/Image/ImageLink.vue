@@ -1,19 +1,19 @@
 <script setup lang="ts">
-  import Image from 'primevue/image'
+import Image from "primevue/image";
 
-  type Props = {
-    imgUrl: string | null
-    imgText: string
-    url: string
-    width: number
-  }
+type Props = {
+  imgUrl: string | null;
+  imgText: string;
+  url: string;
+  width: number;
+};
 
-  const props = withDefaults(defineProps<Props>(), {
-    imgUrl: null,
-    imgText: '',
-    url: '',
-    width: 100
-  })
+const props = withDefaults(defineProps<Props>(), {
+  imgUrl: null,
+  imgText: "",
+  url: "",
+  width: 100,
+});
 </script>
 
 <template>

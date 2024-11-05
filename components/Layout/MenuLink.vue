@@ -1,13 +1,13 @@
 <script setup lang="ts">
-  type Props = {
-    label: string | null
-    url: string | null
-  }
+type Props = {
+  label: string | null;
+  url: string | null;
+};
 
-  const props = withDefaults(defineProps<Props>(), {
-    label: null,
-    url: null
-  })
+const props = withDefaults(defineProps<Props>(), {
+  label: null,
+  url: null,
+});
 </script>
 
 <template>

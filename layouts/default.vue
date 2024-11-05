@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AppHeader from '@/components/Layout/AppHeader';
-import AppFooter from '@/components/Layout/AppFooter';
+import AppHeader from "@/components/Layout/AppHeader";
+import AppFooter from "@/components/Layout/AppFooter";
 </script>
 
 <template>

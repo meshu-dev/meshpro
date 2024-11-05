@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { IntroSite } from '~/types';
+import type { IntroSite } from "~/types";
 
 type Props = {
-  site: IntroSite | null
-}
+  site: IntroSite | null;
+};
 
 const props = withDefaults(defineProps<Props>(), {
-  site: null
-})
+  site: null,
+});
 </script>
 
 <template>

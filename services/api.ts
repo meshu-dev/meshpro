@@ -1,20 +1,51 @@
 import { toRaw } from 'vue'
-import { ConfigEnum } from '~/enums/config'
-import type { About, ApiResponse, ApiValidationError, BlogPost, ContactMessage, ContactMessageResponse, Intro, IntroSite, Project } from '~/types'
-import dayjs from 'dayjs'
-import { getPortfolioApiUrl, getHyperApiUrl } from '~/utils/common'
+import type { About, ApiResponse, Auth, BlogPost, ContactMessage, ContactMessageResponse, Intro, IntroSite, Project } from '~/types'
+import { getPortfolioApiUrl, getPortfolioApiEmail, getPortfolioApiPassword, getHyperApiUrl } from '~/utils/common'
 
-export const getIntroText = async (token: string = ''): Promise<Intro> => {
+export const login = async (): Promise<any> => {
+  const email: string = getPortfolioApiEmail()
+  const password: string = getPortfolioApiPassword()
+
+  const apiUrl: string = getPortfolioApiUrl()
+  const { data } = await useAsyncData(
+    'login',
+    () => $fetch(
+      `${apiUrl}/auth/login`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({ email, password })
+      }
+    )
+  )
+
+  const apiData: ApiResponse = toRaw(data.value) as ApiResponse
+
+  return {
+    token: apiData.data.token,
+  } as Auth
+}
+
+export const getIntroText = async (token: string): Promise<Intro> => {
   const apiUrl: string = getPortfolioApiUrl()
   const { data } = await useAsyncData(
     'intro',
     () => $fetch(
       `${apiUrl}/portfolio/intro`,
       {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${token}`, 
+        },
         method: "GET"
       }
     )
   )
+
   const apiData: ApiResponse = toRaw(data.value) as ApiResponse
 
   return {
@@ -24,13 +55,18 @@ export const getIntroText = async (token: string = ''): Promise<Intro> => {
   } as Intro
 }
 
-export const getAboutData = async (token: string = ''): Promise<About> => {
+export const getAboutData = async (token: string): Promise<About> => {
   const apiUrl: string = getPortfolioApiUrl()
   const { data, pending, error, refresh } = await useAsyncData(
     'about',
     () => $fetch(
       `${apiUrl}/portfolio/about`,
       {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${token}`, 
+        },
         method: "GET"
       }
     )
@@ -39,13 +75,18 @@ export const getAboutData = async (token: string = ''): Promise<About> => {
   return apiData.data as About
 }
 
-export const getProjects = async (token: string = ''): Promise<Project[]> => {
+export const getProjects = async (token: string): Promise<Project[]> => {
   const apiUrl: string = getPortfolioApiUrl()
   const { data } = await useAsyncData(
     'projects',
     () => $fetch(
       `${apiUrl}/portfolio/projects`,
       {
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "Authorization": `Bearer ${token}`, 
+        },
         method: "GET"
       }
     )

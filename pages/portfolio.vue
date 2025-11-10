@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import ProjectBlock from '@/components/Project/ProjectBlock.vue'
-import { getProjects } from '@/services/api'
-import type { Project } from '~/types'
+import { getProjects, login } from '@/services/api'
+import type { Auth, Project } from '~/types'
+
+const auth: Ref<Auth | null> = ref(
+  await login() || null
+)
 
 const projects: Ref<Project[] | null> = ref(
-  await getProjects() || null
+  auth.value?.token ? await getProjects(auth.value.token) : null
 )
 </script>
 

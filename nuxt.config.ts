@@ -21,6 +21,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss'
   ],
   runtimeConfig: {
+    portfolioApiEmail: process.env.PORTFOLIO_API_EMAIL,
+    portfolioApiPassword: process.env.PORTFOLIO_API_PASSWORD,
     public: {
       recaptcha: {
         v3SiteKey: process.env.GOOGLE_RECAPTCHA_KEY
@@ -28,7 +30,7 @@ export default defineNuxtConfig({
       portfolioApiUrl: process.env.PORTFOLIO_API_URL,
       hyperApiUrl: process.env.HYPER_API_URL,
       blogUrl: process.env.BLOG_URL
-    }
+    },
   },
   nitro: {
     prerender: {

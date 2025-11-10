@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import Image from 'primevue/image'
-import { getAboutData } from '@/services/api'
-import type { About } from '@/types'
+import { getAboutData, login } from '@/services/api'
+import type { About, Auth } from '@/types'
 import { ImageEnum } from '@/enums/image';
 
+const auth: Ref<Auth | null> = ref(
+  await login() || null
+)
+
 const aboutData: Ref<About | null> = ref(
-  await getAboutData() || null
+  auth.value?.token ? await getAboutData(auth.value.token) : null
 )
 </script>
 

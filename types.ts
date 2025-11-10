@@ -43,7 +43,6 @@ export interface User {
 
 export type Auth = {
   token: string
-  user: User
 }
 
 export interface Type {

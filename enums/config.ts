@@ -1,5 +1,7 @@
 export enum ConfigEnum {
-  PortfolioApiUrl = 'portfolioApiUrl',
-  HyperApiUrl = 'hyperApiUrl',
-  BlogUrl = 'blogUrl'
+  PortfolioApiUrl      = 'portfolioApiUrl',
+  PortfolioApiEmail    = 'portfolioApiEmail',
+  PortfolioApiPassword = 'portfolioApiPassword',
+  HyperApiUrl          = 'hyperApiUrl',
+  BlogUrl              = 'blogUrl'
 }

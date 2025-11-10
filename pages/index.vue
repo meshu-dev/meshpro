@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import LinkButton from '@/components/Button/LinkButton.vue'
 import IconLink from '@/components/Image/IconLink.vue'
-import { getIntroText } from '@/services/api'
-import type { Intro } from '~/types'
+import { getIntroText, login } from '@/services/api'
+import type { Auth, Intro } from '~/types'
+
+const auth: Ref<Auth | null> = ref(
+  await login() || null
+)
 
 const introDetails: Ref<Intro | null> = ref(
-  await getIntroText() || null
+  auth.value?.token ? await getIntroText(auth.value.token) : null
 )
 </script>
 

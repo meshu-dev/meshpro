@@ -1,6 +1,6 @@
 import { toRaw } from 'vue'
-import type { About, ApiResponse, Auth, BlogPost, ContactMessage, ContactMessageResponse, Intro, IntroSite, Project } from '~/types'
-import { getPortfolioApiUrl, getPortfolioApiEmail, getPortfolioApiPassword, getHyperApiUrl } from '~/utils/common'
+import type { About, ApiResponse, Auth, ContactMessage, ContactMessageResponse, Intro, IntroSite, Project } from '~/types'
+import { getPortfolioApiUrl, getPortfolioApiEmail, getPortfolioApiPassword } from '~/utils/common'
 
 export const login = async (): Promise<any> => {
   const email: string = getPortfolioApiEmail()
@@ -93,33 +93,6 @@ export const getProjects = async (token: string): Promise<Project[]> => {
   )
   const apiData: ApiResponse = toRaw(data.value) as ApiResponse
   return apiData.data.projects as Project[]
-}
-
-export const getBlogPosts = async (): Promise<BlogPost[]> => {
-  const apiUrl: string = getHyperApiUrl()
-  const { data } = await useAsyncData(
-    'blogPosts',
-    () => $fetch(
-      `${apiUrl}/blogs/latest`,
-      {
-        method: "GET"
-      }
-    )
-  )
-  const apiData: any[] = toRaw(data.value) as any[]
-  let blogPosts: BlogPost[] = []
-
-  for (const apiDataRow of apiData) {
-    blogPosts.push({
-      title: apiDataRow['title'],
-      slug: apiDataRow['slug'],
-      tags: apiDataRow['tags'],
-      published_at: apiDataRow['published_at'],
-      created_at: apiDataRow['created_at'],
-      updated_at: apiDataRow['updated_at']
-    })
-  }
-  return blogPosts
 }
 
 export const sendMessage = async (contactMessage: ContactMessage): Promise<ContactMessageResponse | null> => {

@@ -18,11 +18,3 @@ export const getPortfolioApiEmail = (): string => {
 export const getPortfolioApiPassword = (): string => {
   return getEnvVariable(ConfigEnum.PortfolioApiPassword)
 }
-
-export const getHyperApiUrl = (): string => {
-  return getEnvVariable(ConfigEnum.HyperApiUrl)
-}
-
-export const getBlogUrl = (): string => {
-  return getEnvVariable(ConfigEnum.BlogUrl)
-}

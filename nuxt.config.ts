@@ -28,8 +28,6 @@ export default defineNuxtConfig({
         v3SiteKey: process.env.GOOGLE_RECAPTCHA_KEY
       },
       portfolioApiUrl: process.env.PORTFOLIO_API_URL,
-      hyperApiUrl: process.env.HYPER_API_URL,
-      blogUrl: process.env.BLOG_URL
     },
   },
   nitro: {

@@ -9,7 +9,6 @@
     <nav class="flex gap-5">
       <MenuLink label="About" url="/about" />
       <MenuLink label="Portfolio" url="/portfolio" />
-      <MenuLink label="Blog" url="/blog" />
       <MenuLink label="Contact" url="/contact" />
     </nav>
   </header>

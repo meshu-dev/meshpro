@@ -74,10 +74,6 @@ export type About = {
   technologies: string[]
 }
 
-export type Technology = {
-  name: string
-}
-
 export type Project = {
   name: string
   description: string

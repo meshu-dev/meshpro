@@ -65,18 +65,13 @@ export type Intro = {
 export type IntroSite = {
   name: string
   url: string
-  image: string
+  image_url: string
 }
 
 export type About = {
-  image: string
+  image_url: string
   text: string
-  skills: Skill[]
-}
-
-export type Skill = {
-  name: string
-  technologies: Technology[]
+  technologies: string[]
 }
 
 export type Technology = {

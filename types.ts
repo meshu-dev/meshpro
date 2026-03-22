@@ -50,7 +50,7 @@ export interface Type {
   name: string
 }
 
-export type GitRepository = {
+export type Repository = {
   name: string
   url: string
 }
@@ -82,7 +82,7 @@ export type Project = {
   name: string
   description: string
   url: string
-  image: string
-  repositories: GitRepository[]
-  technologies: Technology[]
+  image_url: string
+  repositories: Repository[]
+  technologies: string[]
 }

@@ -19,7 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
   <Card v-if="props.project" class="max-w-[640px] rounded rounded-xl max-[1440px]:max-w-[500px] max-[1200px]:max-w-[650px] max-[775px]:max-w-[500px]">
     <template #header>
-      <Image imageClass="w-[550px] rounded rounded-t-xl" :src="props.project.image ?? ImageEnum.Project" alt="Image" />
+      <Image imageClass="w-[550px] rounded rounded-t-xl" :src="props.project.image_url ?? ImageEnum.Project" alt="Image" />
     </template>
     <template #title>
       {{ props.project.description }}

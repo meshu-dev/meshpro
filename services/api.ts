@@ -92,7 +92,7 @@ export const getProjects = async (token: string): Promise<Project[]> => {
     )
   )
   const apiData: ApiResponse = toRaw(data.value) as ApiResponse
-  return apiData.data.projects as Project[]
+  return apiData.data as Project[]
 }
 
 export const sendMessage = async (contactMessage: ContactMessage): Promise<ContactMessageResponse | null> => {

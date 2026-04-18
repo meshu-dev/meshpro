@@ -3,4 +3,16 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@nuxt/ui'],
+  css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    portfolioApiEmail: process.env.PORTFOLIO_API_EMAIL,
+    portfolioApiPassword: process.env.PORTFOLIO_API_PASSWORD,
+    public: {
+      recaptcha: {
+        v3SiteKey: process.env.NUXT_PUBLIC_GOOGLE_RECAPTCHA_KEY
+      },
+      cvUrl: process.env.NUXT_PUBLIC_CV_URL,
+      portfolioApiUrl: process.env.NUXT_PUBLIC_PORTFOLIO_API_URL,
+    },
+  },
 })

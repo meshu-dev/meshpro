@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import type { FormError, FormSubmitEvent } from '@nuxt/ui'
+import type { Toast } from '@nuxt/ui/runtime/composables/useToast.js'
+import { useRecaptchaProvider } from 'vue-recaptcha'
+import { useChallengeV3 } from 'vue-recaptcha'
+import { VueRecaptchaPlugin } from 'vue-recaptcha'
+const appConfig = useAppConfig()
+
+
 
 const state = reactive({
   name: undefined,
@@ -7,19 +14,52 @@ const state = reactive({
   message: undefined
 })
 
+const token = ref()
+
 type Schema = typeof state
 
 function validate(state: Partial<Schema>): FormError[] {
   const errors = []
-  if (!state.email) errors.push({ name: 'email', message: 'Required' })
-  if (!state.name) errors.push({ name: 'password', message: 'Required' })
-  return errors
+
+  if (!state.name) {
+    errors.push({ name: 'name', message: 'Required' })
+  }
+
+  if (!state.email) {
+    errors.push({ name: 'email', message: 'Required' })
+  }
+
+  if (!state.message) {
+    errors.push({ name: 'message', message: 'Required' })
+  }
+
+  return []// errors
 }
 
 const toast = useToast()
+
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  toast.add({ title: 'Success', description: 'The form has been submitted.', color: 'success' })
-  console.log(event.data)
+  //const { execute } = useChallengeV3('submit')
+  const token: string = ''//await execute()
+
+  let toastData: Partial<Toast> | null = null
+
+  if (token) {
+    toastData = {
+      title: 'Success',
+      description: 'The form has been submitted.',
+      color: 'success'
+    }
+  } else {
+    toastData = {
+      title: 'error',
+      description: 'An error occurred validating submission. Please try again later.',
+      color: 'error',
+    }
+  }
+
+  toast.add(toastData)
+  return
 }
 </script>
 
@@ -38,6 +78,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         <UFormField label="Message" name="message" orientation="horizontal" class="w-full">
           <UTextarea v-model="state.message" :rows="12" class="w-120" />
         </UFormField>
+        <NuxtTurnstile class="ml-30" v-model="token" />
         <UButton type="submit" class="ml-30">
           Submit
         </UButton>

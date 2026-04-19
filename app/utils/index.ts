@@ -1,6 +1,7 @@
 import type { AuthResponse, AuthPayload } from '~/types/Auth'
 import type { About, Intro, PortfolioResponse, Project } from '~/types/Portfolio'
 import type { RuntimeConfig } from 'nuxt/schema'
+import type { ContactPayload } from '@/types/Contact'
 
 export const fetchToken = async function (config: RuntimeConfig): Promise<string> {
   const apiUrl: string = `${config.public.portfolioApiUrl}/auth/login`
@@ -48,4 +49,17 @@ export const getAbout = function (): About|null {
 export const getProjects = function (): Project[]|null {
   const response: PortfolioResponse = getSiteData()
   return response?.data.projects || null
+}
+
+export const sendMessage = async function (config: RuntimeConfig, payload: ContactPayload): Promise<any> {
+  const apiUrl: string = config.public.portfolioApiUrl
+
+  const response: PortfolioResponse = await $fetch(
+    `${apiUrl}/contact`,
+    { method: 'POST', body: payload  }
+  )
+
+  console.log('response', response)
+
+  return response
 }

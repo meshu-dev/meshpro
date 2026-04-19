@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import type { FormError, FormSubmitEvent } from '@nuxt/ui'
 import type { Toast } from '@nuxt/ui/runtime/composables/useToast.js'
+import type { RuntimeConfig } from 'nuxt/schema'
+import type { ContactPayload } from '@/types/Contact'
 const appConfig = useAppConfig()
 
 const state = reactive({
@@ -34,12 +36,26 @@ function validate(state: Partial<Schema>): FormError[] {
 const toast = useToast()
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  //const { execute } = useChallengeV3('submit')
   const token: string = ''//await execute()
+
+  console.log('cloudflare token', token)
 
   let toastData: Partial<Toast> | null = null
 
   if (token) {
+    const config: RuntimeConfig = useRuntimeConfig()
+
+    const payload: ContactPayload = {
+      name: state.name || '',
+      email: state.email || '',
+      message: state.message || ''
+    } as ContactPayload
+
+    const response = await sendMessage(
+      config,
+      payload
+    )
+
     toastData = {
       title: 'Success',
       description: 'The form has been submitted.',

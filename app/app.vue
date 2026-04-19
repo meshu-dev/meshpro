@@ -4,7 +4,7 @@
   const siteData = useState('siteData')
 
   await callOnce(async () => {
-    const config: RuntimeConfig = useRuntimeConfig();
+    const config: RuntimeConfig = useRuntimeConfig()
     siteData.value = await fetchPortfolio(config)
   })
 </script>

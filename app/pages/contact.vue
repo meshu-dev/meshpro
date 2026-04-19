@@ -60,6 +60,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       payload
     )
 
+    console.log('response', response)
+
     toastData = {
       title: 'Success',
       description: 'The form has been submitted.',

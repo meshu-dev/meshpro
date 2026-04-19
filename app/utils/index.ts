@@ -54,7 +54,7 @@ export const getProjects = function (): Project[]|null {
 export const sendMessage = async function (config: RuntimeConfig, payload: ContactPayload): Promise<any> {
   const apiUrl: string = config.public.portfolioApiUrl
 
-  const response: PortfolioResponse = await $fetch(
+  const response: PortfolioResponse|any = await $fetch(
     `${apiUrl}/contact`,
     { method: 'POST', body: payload  }
   )

@@ -40,14 +40,19 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
   let toastData: Partial<Toast> | null = null
 
-  if (token.value) {
+  if (
+    state.name &&
+    state.email &&
+    state.message &&
+    token.value
+  ) {
     const config: RuntimeConfig = useRuntimeConfig()
 
     const payload: ContactPayload = {
-      name: state.name || '',
-      email: state.email || '',
-      message: state.message || '',
-      token
+      name: state.name,
+      email: state.email,
+      message: state.message,
+      token: token.value
     } as ContactPayload
 
     const response = await sendMessage(

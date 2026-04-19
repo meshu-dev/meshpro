@@ -5,7 +5,6 @@
   const config: RuntimeConfig = useRuntimeConfig()
 
   const intro = getIntro()
-  console.log('intro', intro)
 
   const links = ref<ButtonProps[]>([
     {

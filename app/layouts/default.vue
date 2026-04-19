@@ -60,8 +60,8 @@ const intro = getIntro()
       <template #left>
         <p class="text-muted text-sm">
           Built with 
-          <a href="https://laravel.com" class="bold text-[#f53003]" target="_blank">Laravel</a> &amp; 
-          <a href="https://nuxt.com" class="bold text-[#00dc82]" target="_blank">Nuxt.js</a>
+          <a href="https://laravel.com" class="bold text-[#f53003] hover:underline underline-offset-4" target="_blank">Laravel</a> &amp; 
+          <a href="https://nuxt.com" class="bold text-[#00dc82] hover:underline underline-offset-4" target="_blank">Nuxt.js</a>
         </p>
       </template>
       <template #right>

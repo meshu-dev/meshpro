@@ -1,12 +1,7 @@
 <script setup lang="ts">
 import type { FormError, FormSubmitEvent } from '@nuxt/ui'
 import type { Toast } from '@nuxt/ui/runtime/composables/useToast.js'
-import { useRecaptchaProvider } from 'vue-recaptcha'
-import { useChallengeV3 } from 'vue-recaptcha'
-import { VueRecaptchaPlugin } from 'vue-recaptcha'
 const appConfig = useAppConfig()
-
-
 
 const state = reactive({
   name: undefined,
@@ -33,7 +28,7 @@ function validate(state: Partial<Schema>): FormError[] {
     errors.push({ name: 'message', message: 'Required' })
   }
 
-  return []// errors
+  return errors
 }
 
 const toast = useToast()

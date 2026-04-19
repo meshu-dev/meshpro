@@ -36,19 +36,18 @@ function validate(state: Partial<Schema>): FormError[] {
 const toast = useToast()
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  const token: string = ''//await execute()
-
-  console.log('cloudflare token', token)
+  console.log('cloudflare token', token.value, token)
 
   let toastData: Partial<Toast> | null = null
 
-  if (token) {
+  if (token.value) {
     const config: RuntimeConfig = useRuntimeConfig()
 
     const payload: ContactPayload = {
       name: state.name || '',
       email: state.email || '',
-      message: state.message || ''
+      message: state.message || '',
+      token
     } as ContactPayload
 
     const response = await sendMessage(

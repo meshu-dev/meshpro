@@ -21,6 +21,7 @@ export type Intro = {
 export type IntroSite = {
   name: string
   url: string
+  icon: string
   image_url: string
 }
 

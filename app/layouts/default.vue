@@ -45,11 +45,11 @@ const intro = getIntro()
             variant="ghost"
             :to="site.url"
             target="_blank"
-            icon="i-simple-icons-github"
+            :icon="site.icon"
             :aria-label="site.name"
           />
         </UTooltip>
-        <UColorModeButton />
+        <UColorModeButton class="hover:cursor-pointer" />
       </template>
     </UHeader>
     <UContainer class="min-h-[610px] py-10">
@@ -72,9 +72,3 @@ const intro = getIntro()
     </UFooter>
   </div>
 </template>
-
-<!--
-    <AppHeader />
-    <slot />
-    <AppFooter />
--->

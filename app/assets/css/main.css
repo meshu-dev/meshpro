@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-
 #about-text p {
-    @apply mb-6;
+  @apply mb-6;
 }

@@ -9,7 +9,7 @@
   const links = ref<ButtonProps[]>([
     {
       label: 'Contact me',
-      to: 'http://localhost:3000/contact',
+      to: '/contact',
       color: 'neutral',
       variant: 'subtle',
     },

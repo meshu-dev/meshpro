@@ -62,6 +62,10 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
     console.log('response', response)
 
+    state.name = undefined
+    state.email = undefined
+    state.message = undefined
+
     toastData = {
       title: 'Success',
       description: 'The form has been submitted.',

@@ -19,6 +19,6 @@ export default defineNuxtConfig({
     },
   },
   turnstile: {
-    siteKey: process.env.CLOUDFLARE_TURNSTILE_PUBLIC_KEY,
+    siteKey: process.env.CLOUDFLARE_TURNSTILE_SITE_KEY,
   },
 })

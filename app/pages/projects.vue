@@ -7,15 +7,15 @@
 
 <template>
   <div class="flex justify-center">
-    <div class="grid grid-cols-2 gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
       <UCard
         v-for="project of projects"
-        class="w-130 p-0">
+        class="w-full md:w-120 p-0">
           <div class="flex flex-col w-full">
             <img :src="project.image_url" :alt="project.name" class="flex-1 max-w-full" />
             <div class="p-4">
               <div class="font-semibold text-2xl">{{ project.description }}</div>
-              <div class="w-full mt-4 flex justify-between max-sm:flex-col max-sm:gap-8">
+              <div class="w-full mt-4 flex gap-4 sm:justify-between max-sm:flex-col sm:gap-8">
                 <div class="flex gap-3">
                   <UButton :to="project.url" target="_blank">View</UButton>
                   <GitRepoButton :repositories="project.repositories">View</GitRepoButton>

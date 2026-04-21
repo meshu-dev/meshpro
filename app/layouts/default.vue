@@ -4,7 +4,7 @@ import Logo from '~/components/Logo.vue'
 
 const route = useRoute()
 
-const items = computed<NavigationMenuItem[]>(() => [
+const menuItems = computed<NavigationMenuItem[]>(() => [
   {
     label: 'Home',
     to: '/',
@@ -28,6 +28,21 @@ const items = computed<NavigationMenuItem[]>(() => [
 ])
 
 const intro = getIntro()
+
+const siteItems: NavigationMenuItem[] = []
+
+if (intro?.sites) {
+  for (const site of intro?.sites) {
+    siteItems.push({
+      label: site.name,
+      icon: site.icon,
+      to: site.url,
+      target: '_blank'
+    })
+  }
+}
+
+const mobileSiteItems = computed<NavigationMenuItem[]>(() => siteItems)
 </script>
 
 <template>
@@ -36,7 +51,17 @@ const intro = getIntro()
       <template #title>
         <Logo class="h-6 w-auto" />
       </template>
-      <UNavigationMenu :items="items" />
+      
+      <UNavigationMenu :items="menuItems" />
+
+      <template #body>
+        <UNavigationMenu orientation="vertical" :items="menuItems" />
+        <div class="block md:hidden">
+          <USeparator class="my-4" />
+          <UNavigationMenu orientation="vertical" :items="mobileSiteItems" />
+        </div>
+      </template>
+
       <template #right>
         <UTooltip text="Open on GitHub" :kbds="['meta', 'G']">
           <UButton
@@ -47,6 +72,7 @@ const intro = getIntro()
             target="_blank"
             :icon="site.icon"
             :aria-label="site.name"
+            class="hidden md:flex"
           />
         </UTooltip>
         <UColorModeButton class="hover:cursor-pointer" />

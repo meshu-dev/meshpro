@@ -87,6 +87,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 <template>
   <div class="flex md:justify-center gap-10">
     <div>
+      <UPageHeader title="Let's Connect" class="mb-6" />
       <p class="text-xl mb-10 w-full lg:w-lg">I'm always on the lookout for new opportunities 
       so please send me a message and let's talk</p>
       <UForm :validate="validate" :state="state" class="w-full md:min-w-[600px] space-y-4" @submit="onSubmit">
@@ -99,7 +100,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         <UFormField label="Message" name="message" orientation="horizontal" class="w-full">
           <UTextarea v-model="state.message" :rows="12" class="w-full sm:w-90 md:w-120" />
         </UFormField>
-        <div class="flex flex-col justify-center items-center mt-6 md:justify-items-start md:items-start">
+        <div class="flex flex-col justify-center items-center mt-6 lg:justify-items-start lg:items-start">
           <NuxtTurnstile class="md:ml-30" v-model="token" />
           <div class="flex justify-center mt-4 md:justify-items-start">
             <UButton type="submit" class="md:ml-30">

@@ -13,8 +13,8 @@
         <UCard
           v-for="project of projects"
           class="w-full lg:w-120 p-0">
-            <div class="flex flex-col w-full">
-              <img :src="project.image_url" :alt="project.name" class="flex-1 max-w-full" />
+            <div class="grid justify-items-stretch">
+              <img :src="project.image_url" :alt="project.name" class="h-fit sm:h-80 lg:h-100 object-fill" />
               <div class="p-4">
                 <div class="font-semibold text-2xl">{{ project.description }}</div>
                 <div class="w-full mt-4 flex flex-col gap-4 md:justify-between lg:flex-row lg:gap-8">
